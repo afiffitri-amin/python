@@ -10,3 +10,6 @@ Rightmove.co.uk Website
 
 EventBrite Malaysia Website  
 [(Scraping)](https://github.com/afiffitri-amin/python/blob/master/scrape/EventBrite/eventbrite_scrape.py)  
+
+Regular Expression  
+[(Simple Regex)](https://github.com/afiffitri-amin/python/blob/master/regex/01-regex-basic.ipynb)

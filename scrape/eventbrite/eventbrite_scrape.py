@@ -4,7 +4,7 @@ from time import sleep
 from tqdm import tqdm
 import json
 
-url = 'https://www.eventbrite.com/d/malaysia--kuala-lumpur/all-events/?page='
+base_url = 'https://www.eventbrite.com/d/malaysia--kuala-lumpur/all-events/?page='
 
 events_list = []
 

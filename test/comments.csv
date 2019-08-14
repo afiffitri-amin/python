@@ -1,0 +1,172 @@
+poster,message,blog_id,id
+Bryan Green,"Is there a plan for ""version 1.0""? 
+Or will we just see 0.126.2 taking over The Internet?",1,1
+Kristian,Great! And I see the new ICU plugin has been released too. Kudos! ,2,2
+ianmayo,"Here's a URL to view the issues resolved between 0.19.0 RC3 and 0.19.0 Release:
+https://github.com/elasticsearch/elasticsearch/issues?labels=v0.19.0&sort=created&direction=desc&state=closed&page=1",3,3
+Benny Sadeh,like multiple keyword search (each one with a different boost factor),4,4
+Bryan Green,Thanks a ton Shay! This release rocks as usual. I can't wait to work with msearch...,4,5
+Bryan Green,I always pull several different sets of data when a request comes in. This allows me to pull unrelated data without connection related overhead.,4,6
+haarts,What would be a good use case for msearch? I can't come up with any.,4,7
+Eric,"Should you add new features to a RC version, risking the introduction of more bugs while the RC's are meant to get all/most bugs solved?",5,8
+Seon,"Hooo-rah, Shay and team.",7,9
+Damian Tylczyński,Thanks!,7,10
+Maximillian Borgia,any maven repo for this?,8,11
+Ctymtce,How preload index in this please? thank'u,8,12
+Yangfuchao2010,good,9,13
+Marius,"Very impressive. I've tried to bend Solr to fit into a cloud-based, distributed setup without master/slaves, but gave up. Setting up elasticsearch was a snap, and the Java API is nice and simple. ",9,14
+Shaun,this is an awesome bit of kit - thanks - ive never prototyped data mashing solutions so fast! and ES is making this possible,9,15
+Bryan Green,Thank you Shay. ,10,16
+Alper Akgun,"I have moved 3 Ruby projects to elasticsearch,  and I am impressed by elasticsearch simplicity.  Thanks for keeping on. ",10,17
+Mike Kelp,Thank you for all your work. Elastic search is very powerful and your take on the search problem is very cool.,10,18
+Bryan Green,I'm always thrilled when a new version comes out. The features impress me and Elasticsearch makes working with objects a breeze. Who you gonna call? JSON.,11,19
+Frederic, Awesome new features! Thanks and just keep the great work.,11,20
+Don Smith,Does this work in Azure? ,12,21
+avasilenko,Excellent! It would be nice to include changelog in post,13,22
+ES user,Cool software! Thank you!,13,23
+kimchy,There is a link to all the issues fixed in the download page. usually we copy them over later also to the actual download page.,13,24
+Eko Kurniawan Khannedy,nice,17,25
+Pipa,thanks,21,26
+Ben10,any news on field collapsing?,21,27
+Enrique Medina,Congrats for a new release!,21,28
+Horst,"yes, this would be a really cool  feature",21,29
+Andrej,Will there be a Multi Get where you can specify the fields to return?,21,30
+Tarun Jangra, Good to see next release. Congrats.,21,31
+parental filter,"
+
+Will this automatically filter every  website that we’re going to open in our
+browser, it looks good to me. It will be a big help in filtering porn website
+to avoid my kid from opening that website, I guess I should review this first.
+
+
+",21,32
+Sebong Oh,I have been waiting for this release because of lucene upgrade. ,21,33
+kimchy,"No, though you don't want to ask for ""too many"" as you need enough memory to represent it.
+
+p.s. best place for questions is on the mailing list",21,34
+mrg,is there an upper limit  on multi get? ,21,35
+富超 杨,嘿嘿,22,36
+CSP,"Does anyone know of a backup and recvovery strategy for ES? Thanks,",22,37
+Chris Myers,Does anyone know when the grails plugin will catch up to this version?,22,38
+Joe Rawlings,very nice!,22,39
+Jacob Shea, Becoming a bigger fan with every ElasticSearch article I read....nice job.,23,40
+Enrique Medina Montenegro," I'm already thinking about tens of different ways to use this stuff in my website.
+
+Thanks for lighting this up.",23,41
+Fred Almeida,you should be using d3.js instead of Protovis (it is no longer being actively maintained).  but otherwise pretty cool,23,42
+Martijn Laarman,"Using facets for displaying statistical data was one of those aha moments for me, I had no clue protovis drew graphics that sharp and nice though, beautiful!
+
+Another great alternative use for facets is for decision tree/workflow interfaces. 
+
+Excellent blog post.
+
+
+",23,43
+Radu Gheorghe,"Very nice and user-friendly documentation, especially for a ""young"" project. +10 kilos of respect for you guys!",23,44
+mofle,"Interesting post, good job ;)
+
+I'm really starting to see all the possibilities of ES.
+
+Would love too see more posts like this.
+
+Would also like posts on the analyzers and usability improvements, like ""did you mean"" correction, search suggestions. Maybe do a post series where you dvelve into some the different parts of ES and show the many possibilities.",23,45
+Lukas Kahwe Smith,"Congrats on your baby and no I don't mean ElasticSearch in this case, though congrats are in order for that one too :)",25,46
+Enrique Medina Montenegro,Congrats Shay,25,47
+Pacquiao vs Marquez 3,"nice blog & very informative, i'm bookmarking this blog & visiting again for updates.",26,48
+Mary Vega,"I am a newbie and trying to code a website for online dictionary. I already have the database in excel and want to make the website using mysql and phpmyadmin. I still have problems with mysql database queries, do you have any suggestions? ",26,49
+Medcl,Great~~,28,50
+Enrique Medina,"Great job, Shay. Looking forward to using that new Date Histogram in my projects.",28,51
+Will Ezell,How does this work across puts to multiple nodes?  I put a version=2 on node 1 and someone else puts a version=2 on node 2 at the same time?  How is that contention handled?,29,52
+David MARTIN,RT @elasticsearch: Versioning in the upcoming 0.15 build http://bit.ly/fCKYSQ,29,53
+J Chris Anderson,"Can I use this to receive real-time results from a river,? like eg if I want to get a feed of updated twitter search results when using the twitter river. Or do I need to pass the document in with each request?",30,54
+Hookercookerman,is it possible to geo filter on percolate?,30,55
+Pau,"I can't get it working!
+
+First I do:
+curl -XPUT localhost:9200/_percolator/users/4dfba36ee6f59c1187000001 -d '{""query"":{""field"":{""gender"":""male""}}}'
+And then I try to:curl -XGET localhost:9200/users/candidates/_precolate -d '{""doc"":{""gender"":""male""}}'
+
+But I get:
+{""_index"":""zpeaker"",""_type"":""candidates"",""_id"":""_precolate""}
+
+Instead of:
+{""ok"":true,""matches"":[""4dfba36ee6f59c1187000001""]}",30,56
+Avi Rappoport,"That's an interesting way of approaching filtering, and I'm definitely curious about what people do with it.  
+
+Have you read the classic filtering article?  1992, Belkin and Croft, ""Information filtering and retrieval: Two sides of the same coin?""  you can get it via http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.104.7500",30,57
+Achaayan,Promoted Rersults?,30,58
+Tim Hawkins,"This looks very cool, can this be used for ""term extraction"", ie load a percolator index up with a large dictionary of topic specific ""terms"" and push a document at it and have it tell you all the terms that where matched? 
+
+I am using several term extraction AOI's which generally only work in english, but this should if I understand it properly allow me to develop my own term dictionaries for multiple languages. ",30,59
+MikOS,"To the people who asked about uses for Percolator, I used it to determine if the incoming document needs indexing or abandoned. The other obvious application would be real-time alerting etc.",30,60
+real estate,"
+
+This program is essential for website owners to read and
+also for those who are planning to build one. Before you are going to build
+your page, make sure that you do have enough information on how to make it more
+useful to your viewers.
+
+
+",31,61
+EmmanuelOga,"The new layout is much welcomed! A little constructive criticism: gradients are not so great for reading. Perhaps you should consider adding a solid white rectangle for paragraphs? Another good idea is organize a design contest. Everybody loves those :-) And in a group of almost 500 members I'm sure a couple of people could get into such contest.
+
+ ",31,62
+Pipa,Thanks,31,63
+Colin Mollenhour,"I find it ironic that considering the subject matter of this project, that I as a developer seeking documentation, cannot.. you know, search! ;-)
+I was trying to find the docs on sorting and was able to find a link using Google but it was 404.. Can you put the old docs up somewhere until the new docs are complete?
+
+Thanks for elasticsearch!",31,64
+kimchy,"Right, at least for the guide, a nice white background is probably preferable. People are most welcomed to fork and submit designs :).",31,65
+Marco Oliveira,"This looks great! I've been digging into CouchDB lately, and it's great to see that I'll be able to easily integrate the ES search capabilities into it.",36,66
+Patrick Sauts,"Elasticsearch-river-rabbitmq uses '\n' as a separator.meaning inside you Json you must remove every '\n' (I replaced those with '<br>') you mustn't use formated Jsonafter each Json command including the last one you have to have a '\n'
+The command 'index' or 'create' must be within a single messageexemple:{ ""index"" : { ""_index"" : ""twitter"", ""_type"" : ""tweet"", ""_id"" : ""1"" }{ ""tweet"" : { ""text"" : ""this is a tweet"" } }
+curl -L --show-error http://guest:guest@integ-mq:55672/api/exchanges/test/tweet/publish -XPOST -d '{""properties"":{""content_type"":""application/json"",""content_encoding"":""UTF-8""}, ""routing_key"":""elasticsearch"",""payload_encoding"":""string"",""payload"":""{ \""index\"" : { \""_index\"" : \""twitter\"", \""_type\"" : \""tweet\"", \""_id\"" : \""1\"" }{ \""tweet\"" : { \""text\"" : \""this is a tweet\"" } }""}'",37,67
+Lorenzo Melegari,"on https://github.com/elasticsearch/elasticsearch/issues/380 password tag is wrong, should be pass",37,68
+Patrick Sauts,"I found the problems looking into the code<br>elasticsearch-river-rabbitmq uses '\n' as a separator.<br>Meaning inside you Json you must remove every '\n' (I replaced those with '\<br\>') you mustn't use formated Jsonafter each Json command including the last one you have to have a '\n' <br>
+The command 'index' or 'create' must be within a single message<br>exemple:<br>{ ""index"" : { ""_index"" : ""twitter"", ""_type"" : ""tweet"", ""_id"" : ""1"" }<br>{ ""tweet"" : { ""text"" : ""this is a tweet"" } }<br><br>
+curl -L --show-error http://guest:guest@integ-mq:55672/api/exchanges/integ2/LOG_BROWSING/publish -XPOST -d '{""properties"":{""content_type"":""application/json"",""content_encoding"":""UTF-8""},""routing_key"":""#.#.#"",""payload_encoding"":""string"",""payload"":""{ \""index\"" : { \""_index\"" : \""twitter\"", \""_type\"" : \""tweet\"", \""_id\"" : \""1\"" }<br>{ \""tweet\"" : { \""text\"" : \""this is a tweet\"" } }<br>""}'<br>",37,69
+Aaron Shaf,Any support for a MongoDB river?,38,70
+Gert Thiel,"To be honest I don't know for sure. But <a href=""https://github.com/mikejs/photovoltaic"">photovoltaic</a> does exactly what I described and would like to expect from a MongoDB river.",38,71
+kimchy,"Well, you can use the same python code to index into elasticsearch if it does what you want. Lets move this to the mailing list, really not the place for this.",38,72
+kimchy,"The list of rivers is provided in the guide under the river section. Other river implementations are certainly possible, and would love contributions :)",38,73
+Gert Thiel,"Actually there is a way to hook into MongoDB: the oplog. A MongoDB river could get a cursor on the oplog and and update the ES index on isert, update or delete ops.
+
+After searching for a while I found a code snippet albeit in Python:
+
+https://github.com/mikejs/photovoltaic/blob/master/pv.py#L65
+
+The oplog is a plain MongoDB collection always available in replicated setups and easily accessible using the MongoDB Java client.
+
+But I no Java guy at all and don't feel confident to write a River.",38,74
+Roly,Is there any documentation on how to get started implementing your own River plugin? ,38,75
+Christoph,"What type of sources are supported for rivers? Can it be a mysql log file, a rails log file, a rss feed?",38,76
+kimchy,"Right, I guess it requires more investigation, but I thought the oplog does not always contains the full doc when something changes, and, its a question of when it gets flushed, how does one sync with the initial data set and then starts traversing the oplog, and so on...",38,77
+kimchy,"No, there isn't one. Its problematic since its not simple (or even possible) to hook into changes happening in mongodb. Most users simply replicates relevant changes they do on mongodb to elasticsearch.",38,78
+kimchy,"Yes, you can do that, post the Q on the mailing list for more details, but you can get the distance computed in the script itself, and use another field and some formula between the two to control the scoring.",41,79
+Pau,Same here,41,80
+Home Security,is it possible to percolate on geo in anyway?,41,81
+Jeff Johnson,"""The geo point type is no longer dynamic, you have to explicitly define it. "" -- Shay
+
+http://groups.google.com/a/elasticsearch.com/group/users/browse_thread/thread/f3171f71417adfb8/db7c749003545b73?lnk=gst&q=geo_point#db7c749003545b73",41,82
+Smartphone Applications,Awesome!  really appreciated work keep it up.,41,83
+Mike Jarema,"Shay, awesome work with elastic search.  As a regular Solr user I'm happy to see a lot of the functionality I'd expect carried over to ES -- eg. geo-aware searching.  Plus it's a pleasant refresher to have such a welcoming design on the project site.
+
+I have a Q about custom scoring based on geo_distance ... is it possible to combine geo_distance with some attributes stored on the underlying document?  For example, how would I rank a 5 star restaurant 2km away higher than a 2 star restaurant 1km away?",41,84
+Hookercookerman,is it possible to percolate on geo in anyway? have tried filtering doesnt seem to work?,41,85
+Website Hosting,Really a well written post and you have described everything very clearly. I really enjoyed this post.,45,86
+Tet,<script language=javascript>alert('Test')</script>,47,87
+Anoopamz,"Can I use this with Cassandra , any lib is available ? ",50,88
+Cosmin,"Hi,
+
+Any plans about integrating es with hbase soon? Just curious... ",50,89
+Ridvan Gyundogan,good article. Exactly what I need for my performance tests.,51,90
+Ian Lewis,"Is it possible to use a mySql database as a Gateway?
+
+If so, how is this configured?",51,91
+Changqingyan,"we can search across muli indices?really?this is a really a problem hovering on my mind,I get answers from your blog,please can you tell me more about the search across indices,because our web has the requirement of crossing indices search,thank you ",52,92
+Joesmith,"Thanks for the example! Just wanted to let you know that there is a typo in the first JSON, there should be a comma after the ISBN field.",52,93
+Nicolas Martignole,"The hyperlink to ""overview page"" is broken
+:-)",53,94
+Jagdeep,"Hey Shay... I am exploring elasticsearch for past few months but read this blog first time... Thanks a lot for your contribution to opensource community...
+We respect your this portion of heart :)",53,95
+

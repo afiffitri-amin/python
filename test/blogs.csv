@@ -1,0 +1,1549 @@
+content,author,id,title
+"<p><strong>elasticsearch</strong> version <code>0.19.2</code> is out. You can download it <a href=""/download"">here</a>. It is a bug fix release fixing several bugs including a bug not being able to update index level settings on a live index using the index update settings <span class=""caps"">API</span>.</p>",Shay Banon,1,0.19.2 Released 
+"<p><strong>elasticsearch</strong> version <code>0.19.1</code> is out. You can download it <a href=""/download"">here</a>. It is a bug fix release fixing several bugs including a major bug where a thread can get into <span class=""caps"">CPU</span> spin when its relocated and a search/stats operation is executed against it.</p>
+<p>The release also includes an update to the `read_only` option on an index. The option caused both write and metadata operations to be disabled for the relevant index. Now, in 0.19.1, specific read, write and metadata blocks can be set. See more <a href=""https://github.com/elasticsearch/elasticsearch/issues/1771"">here</a>.</p>",Shay Banon,2,0.19.1 Released 
+"<p><strong>elasticsearch</strong> version <code>0.19.0</code> is out. You can download it <a href=""/download"">here</a>. It is the final 0.19.0 release (after 3 release candidates). 0.19 major features have been outlined in the previous blog posts for each release candidate release, but, it also marks an important bug fix and stability release over 0.18, upgrade is highly encouraged to all elasticsearch users.</p>",Shay Banon,3,0.19.0 Released 
+"<p><strong>elasticsearch</strong> version <code>0.19.0.RC3</code> is out. You can download it <a href=""/download"">here</a>. Its another bug fix released and (hopefully) the final release of 0.19.0 release candidates.</p>
+<p>It also includes two nice features. The first is the ability to use &#8220;date math&#8221; on <code>date</code> types (especially useful in <code>range</code> queries/filters). See more info in the <a href=""https://github.com/elasticsearch/elasticsearch/issues/1708"">issue</a> (and documented under the mapping date type).</p>
+<p>The second feature is a new <span class=""caps"">API</span> called &#8220;Multi Search&#8221; (or <code>msearch</code>). It allows to construct a single request holding several search requests, executing them in the cluster (in parallel) and returning the results. More info on the format and how to use it can be found in the <a href=""https://github.com/elasticsearch/elasticsearch/issues/1722"">issue</a> (and documented under the guide <span class=""caps"">API</span> section).</p>",Shay Banon,4,0.19.0.RC3 Released 
+"<p><strong>elasticsearch</strong> version <code>0.19.0.RC2</code> is out. You can download it <a href=""/download"">here</a>. Its a bug fix release mainly fixing a major bug in how buffers are read and reused over the network (the optimization done in 0.19.0.RC1 was not complete).</p>
+<p>It also include two nice features, the first is the ability to disallow a shard and its replica to be allocated on the same machine when running more than one instance on said machine. It can be enabled by setting <code>cluster.routing.allocation.same_shard.host</code> to <code>true</code>.</p>
+<p>The second is an effort to better log GC pause times (without needing to turn on GC logging), with GC type thresholds and logging thresholds (comes with built in default values).</p>",Shay Banon,5,0.19.0.RC2 Released 
+"<p><strong>elasticsearch</strong> version <code>0.19.0.RC1</code> is out. You can download it <a href=""/download"">here</a>. It is a major release candidate release of elasticsearch.</p>
+<p>This is the first time we release a &#8220;release candidate&#8221; for elasticsearch. The aim is to get users to try it out, fix any problems found with it, and release a final <code>0.19.0</code> release as soon as possible.</p>
+<p>Major features include improved indexing performance, more control over shard allocation, more statistics and simpler <span class=""caps"">API</span> for stats, an update <span class=""caps"">API</span> that accepts a script to perform an update on a document, better state storage when using local gateway, and many bug fixes.</p>
+<h2>Upgrading</h2>
+<p>This release requires a full cluster restart in order to upgrade to the new version (including issuing a flush across all indices before the restart). If you are using the (default) local gateway, it will automatically be upgraded to a new and improved state format (with backups of the original state).</p>
+<p>The structure of the project has also changed, moving all the plugins to their own repos under <a href=""http://github.com/elasticsearch/"">github</a>. Installing a plugin now requires specifying the location and version to install it from.</p>",Shay Banon,6,0.19.0.RC1 Released 
+"<p><strong>elasticsearch</strong> version <code>0.18.7</code> is out. You can download it <a href=""/download"">here</a>. It includes bug fixes including major bug fix in state storage with shared gateways (s3 for example), and support for nested documents in delete by query.</p>",Shay Banon,7,0.18.7 Released 
+"<p><strong>elasticsearch</strong> version <code>0.18.6</code> is out. You can download it <a href=""/download"">here</a>. It includes minor features and important bug fixes. Changes can be found <a href=""https://github.com/elasticsearch/elasticsearch/issues?labels=v0.18.6&amp;sort=created&amp;direction=desc&amp;state=closed&amp;page=1"">here</a>.</p>",Shay Banon,8,0.18.6 Released 
+"<p><strong>elasticsearch</strong> version <code>0.18.5</code> is out. You can download it <a href=""/download"">here</a>. It includes an upgraded Lucene version (3.5), featuring bug fixes and memory improvements, as well as more bug fixes in elasticsearch itself. Changes can be found <a href=""https://github.com/elasticsearch/elasticsearch/issues?labels=v0.18.5&amp;sort=created&amp;direction=desc&amp;state=closed&amp;page=1"">here</a>.</p>",Shay Banon,9,0.18.5 Released 
+"<p><strong>elasticsearch</strong> version <code>0.18.3</code> has just been released. You can download it <a href=""/download"">here</a>. Its an important bug fix release, including a fix for a <a href=""https://github.com/elasticsearch/elasticsearch/issues/1455"">major bug</a> and upgrade is highly recommended. An <code>0.17.10</code> version with the bug fixed has also been released.</p>
+<p>The release also includes additional bug fixes, and some features including <a href=""https://github.com/elasticsearch/elasticsearch/issues/1462"">shard level slow search log</a>, and improved <a href=""https://github.com/elasticsearch/elasticsearch/issues/1463"">upper inclusive range</a> handling for dates.</p>
+<p>[Update]: Heads up that this release includes a broken plugin script, more info <a href=""https://github.com/elasticsearch/elasticsearch/issues/1474"">here</a>.</p>
+<p>[Update 2]: <code>0.18.4</code> has been released fixing the plugin script.</p>
+<p>-shay.banon</p>",Shay Banon,10,0.18.3 Released 
+"<p><strong>elasticsearch</strong> version <code>0.18.0</code> has just been released. You can download it <a href=""/download"">here</a>. This is a major release, and includes the following major features:</p>
+<p><span class=""caps"">UPDATE</span>: <code>0.18.2</code> was quickly released to fix a bug with custom <code>path.data</code> location configuration and fetching inner fields from a source doc.</p>
+<h2>Shard Allocation Awareness and Filtering</h2>
+<p>Shard allocation within a cluster can now be &#8220;aware&#8221; of which node replicas are allocated on (similar to rack awareness). It allows to make sure that a shard and a replica will be allocated across logical grouping of nodes. The awareness can also be forced, by not over allocating replicas within the same logical node group. Search and Get operations will automatically prefer shards that are allocated within the same logical node group the search is executing on.</p>
+<p>Filtering allows to explicitly control which nodes indices are allowed, or not allowed, to be allocated on, again, based on custom logical grouping of nodes (called node attributes).</p>
+<p>Both settings can be updated in realtime using either the cluster wide or index level update settings <span class=""caps"">API</span>. More info can be found <a href=""/guide/reference/modules/cluster.html"">here</a>.</p>
+<h2>Cluster Update Settings <span class=""caps"">API</span></h2>
+<p>The cluster update settings <span class=""caps"">API</span> allow to update node level settings (and not index level settings) in realtime on a live cluster. The settings allowed and more docs on the <span class=""caps"">API</span> are provided <a href=""/guide/reference/api/admin-cluster-update-settings.html"">here</a>.</p>
+<h2>Timestamp and <span class=""caps"">TTL</span></h2>
+<p>A document can now automatically be indexed with a timestamp associated with it, and have a <span class=""caps"">TTL</span> (time to live), which, when expired, will cause the document to be deleted. More info can be found <a href=""/guide/reference/mapping/timestamp-field.html"">here</a> and <a href=""/guide/reference/mapping/ttl-field.html"">here</a>.</p>
+<h2>Improved Geo Execution</h2>
+<p>Geo distance filter and facet good a considerable performance boost by doing bounding box optimization. Also, an option to use indexed lat lon for the checks (must be enabled in the <code>geo_type</code> mapping) is provided which can provide even faster executing under certain conditions (compared to in memory checks).</p>
+<h2>More Statistics</h2>
+<p>More statistics are now provided out of the box, including a new index stats <span class=""caps"">API</span> (the status <span class=""caps"">API</span> should not be used for stats anymore). Statistics for APIs such as index, get, and search are also being aggregated, with search allowing to specific specific stats grouping aggregation (to further distinguish search &#8220;types&#8221;).</p>
+<h2>Multi Data locations</h2>
+<p>A node can now work with multiple data locations, spreading the index files across those locations in a <span class=""caps"">RAID</span> 0 like behavior.</p>
+<h2>Smaller improvements and bug fixes</h2>
+<p>Many more bug fixes and smaller improvement have went into this release. Full release notes can be found <a href=""https://github.com/elasticsearch/elasticsearch/issues?sort=created&amp;direction=desc&amp;labels=v0.18.0&amp;state=closed"">here</a>.</p>
+<p>-shay.banon</p>",Shay Banon,11,0.18.0 Released 
+"<p><strong>elasticsearch</strong> version <code>0.17.8</code> has just been released. You can download it <a href=""/download"">here</a>. The release includes major bug fixes listed <a href=""https://github.com/elasticsearch/elasticsearch/issues?labels=v0.17.8&amp;sort=created&amp;direction=desc&amp;state=closed"">here</a>.</p>",Shay Banon,12,0.17.8 Released 
+"<p><strong>elasticsearch</strong> version <code>0.17.7</code> has just been released. You can download it <a href=""/download"">here</a>.</p>
+<p>This release include the usual list of bug fixes, and also include an upgrade to Lucene 3.4.0 (fixes critical bugs, so make sure you upgrade), as well as improvements to the couchdb river (memory usage wise).</p>",Shay Banon,13,0.17.7 Released 
+"<p><strong>elasticsearch</strong> version <code>0.17.6</code> has just been released. You can download it <a href=""/download"">here</a>. This is is a quick release to fix a bug in automatic date detection when provided as <code>yyyy/MM/dd</code> or <code>yyyy/MM/dd HH:mm:ss</code>.</p>",Shay Banon,14,0.17.6 Released 
+"<p><strong>elasticsearch</strong> version <code>0.17.5</code> has just been released. You can download it <a href=""/download"">here</a>. This is a bug fix release and minor feature enhancements. Upgrade is highly recommended.</p>",Shay Banon,15,0.17.5 Released 
+"<p><strong>elasticsearch</strong> version <code>0.17.4</code> has just been released. You can download it <a href=""/download"">here</a>.</p>
+<p>This is a quick release post <code>0.17.4</code> to fix a reported bug which probably doesn&#8217;t affect most users, but its still an important one to get out there (for new users) as its a difficult one to track down&#8230; . The upgrade is only really needed when using explicit stored fields that have multi values, which can result in not all the values being returned when asked.</p>",Shay Banon,16,0.17.4 Released 
+"<p><strong>elasticsearch</strong> version <code>0.17.3</code> has just been released. You can download it <a href=""/download"">here</a>. This is another bug fix release with minor enhancements (listed <a href=""https://github.com/elasticsearch/elasticsearch/issues?sort=created&amp;labels=v0.17.3&amp;direction=desc&amp;state=closed"">here</a>). This upgrade is highly recommended to all <code>0.17.x</code> users.</p>
+<p>Note, when upgrading to this release, due to a bug in previous 0.17.x versions, it is recommended to run flush against all indices before shutting down the cluster (or doing a rolling restart) if &#8220;delete_by_query&#8221; is used against specific types.</p>",Shay Banon,17,0.17.3 Released 
+"<p>I created the mailing list on a google apps account (paying one&#8230;) with the hopes of not running into spam problems down the road. The problem with that is the fact that I did not know about the host of problems I will have with google account one&#8230; . The latest one is a major problem, where google apps restrict the size of members to 1000 members, and we just hit that.</p>
+<p>So, I am going to migrate the group to a new group in the &#8220;public&#8221; google groups, called <a href=""https://groups.google.com/group/elasticsearch/"">elasticsearch</a>. Sadly, I don&#8217;t think migrating content is possible, but at least I will be able to subscribe all of you. I will automatically subscribe all under a &#8220;Send email for each message and update&#8221; option, so you will have to change that to your preference (sorry about that&#8230;). <em>Update</em>: Google Groups seems to have spam limits on the number of users that can be added, will add them in batches over time, I guess&#8230; . Make sure to <a href=""https://groups.google.com/group/elasticsearch/"">register</a> now if you can.</p>
+<p>Luckily, the group has been mirrored on nabble, and it will remain as a mirror to the new group as well. This group will be closed (but not deleted) and old content will be searchable from both nabble and this interface, posting will not be allowed though. And posts should only go to the new group mailing address. I will post details on the new group shortly, but you should get it as well via direct mail once I invite you.</p>
+<p>I apologize for that. If someone knows of a better way to migrate the mails, it would be great.</p>
+<p>-shay.banon</p>",Shay Banon,18,Mailing List Migration 
+"<p><strong>elasticsearch</strong> version <code>0.17.1</code> has just been released. You can download it <a href=""/download"">here</a>. This is a quick bug fix release fixing major bugs (listed <a href=""https://github.com/elasticsearch/elasticsearch/issues?sort=created&amp;labels=v0.17.1&amp;direction=desc&amp;state=closed"">here</a>).</p>",Shay Banon,20,0.17.1 Released 
+"<p><strong>elasticsearch</strong> version <code>0.17.0</code> has just been released. You can download it <a href=""/download"">here</a>. This is a major release, and includes the following major features:</p>
+<h2>Improved Aliases &#8211; Filtering and Routing</h2>
+<p><a href=""/guide/reference/api/admin-indices-aliases.html"">Index aliases</a>, which are very handy in aliasing a custom name to an index (or indices) and changing it on the fly, now support the ability to associate a search filter which will automatically filter all the search requests when using the alias, and a routing value (will automatically be used when hitting the alias).</p>
+<p>This can come in handy in several scenarios, for example, a single index holding multi user data can have a username as the alias, associate a term filter that filters the results based on the username, and possibly use the username as the routing value (thus hitting less shards when searching).</p>
+<h2>Realtime <span class=""caps"">GET</span></h2>
+<p>The <a href=""/guide/reference/api/get.html"">get</a> <span class=""caps"">API</span> is now fully realtime. This means that its not affected by the scheduled refresh / visibility of changes done to the index for search, and once a document is indexed / deleted, it will be immediately visible for <span class=""caps"">GET</span>.</p>
+<p>Also, a new <a href=""/guide/reference/api/multi-get.html"">multi get</a> <span class=""caps"">API</span> has been added to execute multi document get in an optimized manner.</p>
+<p>Note, the realtime get feature does not require &#8220;refreshing&#8221; the Lucene index, and does not come with the overhead associated with it.</p>
+<h2>Nested objects / docs</h2>
+<p>Nested objects / documents are now supported, allowing for a document to be broken down into root document and nested document (mainly make sense for multi valued inner objects). This allows for better searchability across those nested documents, as well as better faceting.</p>
+<p>The <a href=""/guide/reference/mapping/nested-type.html"">nested</a> mapping allows to control which inner objects will be nested. Searching &#8220;within&#8221; nested docs is done using nested <a href=""/guide/reference/query-dsl/nested-query.html"">query</a> and <a href=""/guide/reference/query-dsl/nested-filter.html"">filter</a>. Faceting is explained in the <a href=""/guide/reference/api/search/facets"">faceting</a> section.</p>
+<p>Note, the fact that those nested documents are &#8220;within&#8221; the json document indexed allows to index them within the same &#8220;block&#8221;, resulting in extremely fast &#8220;join&#8221; implementation (compared to parent child mapping).</p>
+<h2>Plugins &amp; Site Plugins</h2>
+<p>The <a href=""/guide/reference/modules/plugins.html"">plugins</a> module has been enhanced to support downloading plugins from github. Plugins can now also serve static sites, for example, installing two commonly used web admins for elasticsearch is as simple as:</p>
+<pre class=""prettyprint"">
+bin/plugin -install mobz/elasticsearch-head
+bin/plugin -install lukas-vlcek/bigdesk
+</pre>
+<h2>Many Indices / Large Cluster</h2>
+<p>Numerous improvements to large clusters and many indices scenarios, especially around memory utilization and full cluster restart times.</p>
+<h2>Lucene 3.3</h2>
+<p>An upgrade to Lucene 3.3 version bringing bug fixes and a new <a href=""/guide/reference/index-modules/merge.html"">tiered</a> based segment merging.</p>
+<h2>Nodes APIs</h2>
+<p>All nodes level APIs now support executing the APIs against nodes not only based on their IDs. For example:</p>
+<pre class=""prettyprint"">
+# Address
+curl localhost:9200/_cluster/nodes/10.0.0.3,10.0.0.4
+curl localhost:9200/_cluster/nodes/10.0.0.*
+# Names
+curl localhost:9200/_cluster/nodes/node_name_goes_here
+curl localhost:9200/_cluster/nodes/node_name_goes_*
+# Attributes (set something like node.rack: 2 in the config)
+curl localhost:9200/_cluster/nodes/rack:2
+curl localhost:9200/_cluster/nodes/ra*:2
+curl localhost:9200/_cluster/nodes/ra*:2*
+</pre>
+<h2>EC2 specific network host settings</h2>
+<p>Specific ec2 settings for host names when the <code>cloud-aws</code> plugin is installed. For example, setting <code>network.host</code> to <code>_ec2:privateIp_</code> will automatically use the configured instance private ip address to bind and publish to.</p>
+<h2>Small(er) improvements and bug fixes</h2>
+<p>As usual, many more smaller features (more analyzers, more customization) and bug fixes are in this release.</p>
+<p>enjoy!<br />
+-shay.banon</p>",Shay Banon,21,0.17.0 Released 
+"<p><strong>elasticsearch</strong> version <code>0.16.2</code> has just been released. You can download it <a href=""/download"">here</a>. The bulk of the work on this release (backported from master) revolves around improved memory usage, especially with the filter cache (there is a new default filter cache, which takes the size in bytes as a limit on works on the <strong>node</strong> level).</p>
+<p>As usual, bug fixes and other minor improvements. Upgrade is highly recommended.</p>",Shay Banon,22,0.16.2 Released 
+"<p>The primary purpose of a search engine is, quite unsurprisingly: <em>searching</em>. You pass it a query, and it returns bunch of matching documents, in the order of relevance. We can get creative with query construction, experimenting with different analyzers for our documents, and the search engine tries hard to provide best results.</p>
+
+<p>Nevertheless, a modern full-text search engine can do much more than that. At its core lies the <a href='http://en.wikipedia.org/wiki/Index_(search_engine)#Inverted_indices'><em>inverted index</em></a>, a highly optimized data structure for efficient lookup of documents matching the query. But it also allows to compute complex <strong>aggregations</strong> of our data, called <a href='http://www.elasticsearch.org/guide/reference/api/search/facets/index.html'><em>facets</em></a>.</p>
+
+<p>The usual purpose of facets is to offer the user a <em>faceted navigation</em>, or <em>faceted search</em>. When you search for “camera” at an online store, you can refine your search by choosing different manufacturers, price ranges, or features, usually by clicking on a link, not by fiddling with the query syntax.</p>
+
+<p>A canonical example of a <a href='http://blog.linkedin.com/2009/12/14/linkedin-faceted-search/'>faceted navigation at <em>LinkedIn</em></a> is pictured below.</p>
+
+<p><img src='/blog/images/dashboards/linkedin-faceted-search.png' alt='Faceted Search at LinkedIn' /></p>
+
+<p>Faceted search is one of the few ways to make powerful queries accessible to your users: see Moritz Stefaner&#8217;s experiments with <a href='http://well-formed-data.net/archives/54/elastic-lists'>“Elastic Lists”</a> for inspiration.</p>
+
+<p>But, we can do much more with facets then just displaying these links and checkboxes. We can use the data for makings <strong>charts</strong>, which is exactly what we&#8217;ll do in this article.</p>
+
+<h2 id='live_dashboards'>Live Dashboards</h2>
+
+<p>In almost any analytical, monitoring or data-mining service you&#8217;ll hit the requirement <em>“We need a dashboard!”</em> sooner or later. Because everybody loves dashboards, whether they&#8217;re useful or just pretty. As it happens, we can use facets as a pretty powerful analytical engine for our data, without writing any <a href='http://en.wikipedia.org/wiki/Online_analytical_processing'>OLAP</a> implementations.</p>
+
+<p>The screenshot below is from a <a href='http://ataxosocialinsider.cz/'>social media monitoring application</a> which uses <em>ElasticSearch</em> not only to search and mine the data, but also to provide data aggregation for the interactive dashboard.</p>
+
+<p><img src='/blog/images/dashboards/dashboard.png' alt='Ataxo Social Insider Dashboard' /></p>
+
+<p>When the user drills down into the data, adds a keyword, uses a custom query, all the charts change in real-time, thanks to the way how facet aggregation works. The dashboard is not a static snapshot of the data, pre-calculated periodically, but a truly interactive tool for data exploration.</p>
+
+<p>In this article, we&#8217;ll learn how to retrieve data for charts like these from <em>ElasticSearch</em>, and how to create the charts themselves.</p>
+
+<h2 id='pie_charts_with_a_terms_facet'>Pie charts with a <em>terms</em> facet</h2>
+
+<p>For the first chart, we&#8217;ll use a simple <a href='http://elasticsearch.org/guide/reference/api/search/facets/terms-facet.html'><em>terms</em></a> facet in <em>ElasticSearch</em>. This facet returns the most frequent terms for a field, together with occurence counts.</p>
+
+<p>Let&#8217;s index some example data first.</p>
+<pre class='prettyprint lang-bash'>
+curl -X DELETE ""http://localhost:9200/dashboard""
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '
+             { ""title"" : ""One"",
+               ""tags""  : [""ruby"", ""java"", ""search""]}
+'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '
+             { ""title"" : ""Two"",
+               ""tags""  : [""java"", ""search""] }
+'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '
+             { ""title"" : ""Three"",
+               ""tags""  : [""erlang"", ""search""] }
+'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '
+             { ""title"" : ""Four"",
+               ""tags""  : [""search""] }
+'
+curl -X POST ""http://localhost:9200/dashboard/_refresh""
+</pre>
+<p>As you see, we are storing four articles, each with a couple of tags; an article can have multiple tags, which is trivial to express in <em>ElasticSearch</em>&#8217;s document format, JSON.</p>
+
+<p>Now, to retrieve “Top Ten Tags” across the documents, we can simply do:</p>
+<pre class='prettyprint lang-bash'>
+curl -X POST ""http://localhost:9200/dashboard/_search?pretty=true"" -d '
+{
+    ""query"" : { ""match_all"" : {} },
+
+    ""facets"" : {
+        ""tags"" : { ""terms"" : {""field"" : ""tags"", ""size"" : 10} }
+    }
+}
+'
+</pre>
+<p>You can see that we are retrieving all documents, and we have defined a terms facet called “tags”. This query will return something like this:</p>
+<pre class='prettyprint lang-js'>
+{
+    ""took"" : 2,
+    // ... snip ...
+    ""hits"" : {
+        ""total"" : 4,
+        // ... snip ...
+    },
+    ""facets"" : {
+        ""tags"" : {
+            ""_type"" : ""terms"",
+            ""missing"" : 1,
+            ""terms"" : [
+                { ""term"" : ""search"", ""count"" : 4 },
+                { ""term"" : ""java"",   ""count"" : 2 },
+                { ""term"" : ""ruby"",   ""count"" : 1 },
+                { ""term"" : ""erlang"", ""count"" : 1 }
+            ]
+        }
+    }
+}
+</pre>
+<p>We are interested in the <code>facets</code> section of the JSON, notably in the <code>facets.tags.terms</code> array. It tells us that we have four articles tagged <em>search</em>, two tagged <em>java</em>, and so on. (Of course, we could add a <code>size</code> parameter to the query, to skip the results altogether.)</p>
+
+<p>Suitable visualization for this type of ratio distribution is a pie chart, or its variation: a donut chart. The end result is displayed below (you may want to check out the <a href='/blog/assets/dashboards/donut.html'>working example</a>).</p>
+
+<p><a href='/blog/assets/dashboards/donut.html'><img src='/blog/images/dashboards/donut_chart.png' alt='Donut Chart' /></a></p>
+
+<p>We will use <a href='http://vis.stanford.edu/protovis/'><em>Protovis</em></a>, a JavaScript data visualization toolkit. <em>Protovis</em> is 100% open source, and you could think of it as <em>Ruby on Rails</em> for data visualization; in stark contrast to similar tools, it does not ship with a limited set of chart types to “choose” from, but it defines a set of primitives and a flexible domain-specific language so you can easily build your own custom visualizations. Creating <a href='http://vis.stanford.edu/protovis/ex/pie.html'>pie charts</a> is pretty easy in <em>Protovis</em>.</p>
+
+<p>Since <em>ElasticSearch</em> returns JSON data, we can load it with a simple Ajax call. Don&#8217;t forget that you can clone or download the <a href='https://gist.github.com/966338'>full source code</a> for this example.</p>
+
+<p>First, we need a HTML file to contain our chart and to load the data from <em>ElasticSearch</em>:</p>
+<pre class='prettyprint lang-js'>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;ElasticSearch Terms Facet Donut Chart&lt;/title&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+
+    &lt;!-- Load JS libraries --&gt;
+    &lt;script src=&quot;jquery-1.5.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;protovis-r3.2.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;donut.js&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $( function() { load_data(); });
+
+        var load_data = function() {
+            $.ajax({   url: &#x27;http://localhost:9200/dashboard/article/_search?pretty=true&#x27;
+                     , type: &#x27;POST&#x27;
+                     , data : JSON.stringify({
+                           &quot;query&quot; : { &quot;match_all&quot; : {} },
+
+                           &quot;facets&quot; : {
+                               &quot;tags&quot; : {
+                                   &quot;terms&quot; : {
+                                       &quot;field&quot; : &quot;tags&quot;,
+                                       &quot;size&quot;  : &quot;10&quot;
+                                   }
+                               }
+                           }
+                       })
+                     , dataType : &#x27;json&#x27;
+                     , processData: false
+                     , success: function(json, statusText, xhr) {
+                           return display_chart(json);
+                       }
+                     , error: function(xhr, message, error) {
+                           console.error(&quot;Error while loading data from ElasticSearch&quot;, message);
+                           throw(error);
+                       }
+            });
+
+            var display_chart = function(json) {
+                Donut().data(json.facets.tags.terms).draw();
+            };
+
+        };
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Placeholder for the chart --&gt;
+  &lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>On document load, we retrieve exactly the same facet, via Ajax, as we did earlier with <code>curl</code>. In the jQuery Ajax <em>callback</em>, we pass the returned JSON to the <code>Donut()</code> function via the <code>display_chart()</code> wrapper.</p>
+
+<p>The <code>Donut()</code> function itself is displayed, with annotations, below:</p>
+<pre class='prettyprint lang-js'>
+// =====================================================================================================
+// A donut chart with Protovis - See http://vis.stanford.edu/protovis/ex/pie.html
+// =====================================================================================================
+var Donut = function(dom_id) {
+
+    if (&#x27;undefined&#x27; == typeof dom_id)  {                // Set the default DOM element ID to bind
+        dom_id = &#x27;chart&#x27;;
+    }
+
+    var data = function(json) {                         // Set the data for the chart
+        this.data = json;
+        return this;
+    };
+
+    var draw = function() {
+
+        var entries = this.data.sort( function(a, b) {  // Sort the data by term names, so the
+            return a.term &lt; b.term ? -1 : 1;            // color scheme for wedges is preserved
+        }),                                             // with any order
+
+        values  = pv.map(entries, function(e) {         // Create an array holding just the counts
+            return e.count;
+        });
+        // console.log(&#x27;Drawing&#x27;, entries, values);
+
+        var w = 200,                                    // Dimensions and color scheme for the chart
+            h = 200,
+            colors = pv.Colors.category10().range();
+
+        var vis = new pv.Panel()                        // Create the basis panel
+            .width(w)
+            .height(h)
+            .margin(0, 0, 0, 0);
+
+        vis.add(pv.Wedge)                               // Create the &quot;wedges&quot; of the chart
+            .def(&quot;active&quot;, -1)                          // Auxiliary variable to hold mouse over state
+            .data( pv.normalize(values) )               // Pass the normalized data to Protovis
+            .left(w/3)                                  // Set-up chart position and dimension
+            .top(w/3)
+            .outerRadius(w/3)
+            .innerRadius(15)                            // Create a &quot;donut hole&quot; in the center
+            .angle( function(d) {                       // Compute the &quot;width&quot; of the wedge
+                return d * 2 * Math.PI;
+             })
+            .strokeStyle(&quot;#fff&quot;)                        // Add white stroke
+
+            .event(&quot;mouseover&quot;, function() {            // On &quot;mouse over&quot;, set the &quot;wedge&quot; as active
+                this.active(this.index);
+                this.cursor(&#x27;pointer&#x27;);
+                return this.root.render();
+             })
+
+            .event(&quot;mouseout&quot;,  function() {            // On &quot;mouse out&quot;, clear the active state
+                this.active(-1);
+                return this.root.render();
+            })
+
+            .event(&quot;mousedown&quot;, function(d) {           // On &quot;mouse down&quot;, perform action,
+                var term = entries[this.index].term;    // such as filtering the results...
+                return (alert(&quot;Filter the results by &#x27;&quot;+term+&quot;&#x27;&quot;));
+            })
+
+
+            .anchor(&quot;right&quot;).add(pv.Dot)                // Add the left part of he &quot;inline&quot; label,
+                                                        // displayed inside the donut &quot;hole&quot;
+
+            .visible( function() {                      // The label is visible when its wedge is active
+                return this.parent.children[0]
+                       .active() == this.index;
+            })
+            .fillStyle(&quot;#222&quot;)
+            .lineWidth(0)
+            .radius(14)
+
+            .anchor(&quot;center&quot;).add(pv.Bar)               // Add the middle part of the label
+            .fillStyle(&quot;#222&quot;)
+            .width(function(d) {                        // Compute width:
+                return (d*100).toFixed(1)               // add pixels for percents
+                              .toString().length*4 +
+                       10 +                             // add pixels for glyphs (%, etc)
+                       entries[this.index]              // add pixels for letters (very rough)
+                           .term.length*9;
+            })
+            .height(28)
+            .top((w/3)-14)
+
+            .anchor(&quot;right&quot;).add(pv.Dot)                // Add the right part of the label
+            .fillStyle(&quot;#222&quot;)
+            .lineWidth(0)
+            .radius(14)
+
+
+            .parent.children[2].anchor(&quot;left&quot;)          // Add the text to label
+                   .add(pv.Label)
+            .left((w/3)-7)
+            .text(function(d) {                         // Combine the text for label
+                return (d*100).toFixed(1) + &quot;%&quot; +
+                       &#x27; &#x27; + entries[this.index].term +
+                       &#x27; (&#x27; + values[this.index] + &#x27;)&#x27;;
+            })
+            .textStyle(&quot;#fff&quot;)
+
+            .root.canvas(dom_id)                        // Bind the chart to DOM element
+            .render();                                  // And render it.
+    };
+
+    return {                                            // Create the public API
+        data   : data,
+        draw   : draw
+    };
+
+};
+</pre>
+<p>As you can see, with a simple transformation of JSON data returned from <em>ElasticSearch</em>, we&#8217;re able to create rich, attractive visualization of tag distribution among our articles. You can see the full example <a href='/blog/assets/dashboards/donut.html'>here</a>.</p>
+
+<p>It&#8217;s worth repeating that the visualization will work in <em>exactly the same way</em> when we use a different query, such as displaying only articles written by a certain author or published in certain date range.</p>
+
+<h2 id='timelines_with_a_date_histogram_facets'>Timelines with a <em>date histogram</em> facets</h2>
+
+<p><em>Protovis</em> makes it very easy to create another common form of visualization: the <a href='http://vis.stanford.edu/protovis/ex/zoom.html'><em>timeline</em></a>. Any type of data, tied to a certain date, such as an article being published, an event taking place, a purchase being completed can be visualized on a timeline.</p>
+
+<p>The end result should look like this (again, you may want to check out the <a href='/blog/assets/dashboards/timeline.html'>working version</a>):</p>
+
+<p><a href='/blog/assets/dashboards/timeline.html'><img src='/blog/images/dashboards/timeline_chart.png' alt='Timeline Chart' /></a></p>
+
+<p>So, let&#8217;s store handful of articles with a <code>published</code> date in the index.</p>
+<pre class='prettyprint lang-bash'>
+curl -X DELETE ""http://localhost:9200/dashboard""
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""1"",  ""published"" : ""2011-01-01"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""2"",  ""published"" : ""2011-01-02"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""3"",  ""published"" : ""2011-01-02"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""4"",  ""published"" : ""2011-01-03"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""5"",  ""published"" : ""2011-01-04"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""6"",  ""published"" : ""2011-01-04"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""7"",  ""published"" : ""2011-01-04"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""8"",  ""published"" : ""2011-01-04"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""9"",  ""published"" : ""2011-01-10"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""10"", ""published"" : ""2011-01-12"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""11"", ""published"" : ""2011-01-13"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""12"", ""published"" : ""2011-01-14"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""13"", ""published"" : ""2011-01-14"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""14"", ""published"" : ""2011-01-15"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""15"", ""published"" : ""2011-01-20"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""16"", ""published"" : ""2011-01-20"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""17"", ""published"" : ""2011-01-21"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""18"", ""published"" : ""2011-01-22"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""19"", ""published"" : ""2011-01-23"" }'
+curl -X POST ""http://localhost:9200/dashboard/article"" -d '{ ""t"" : ""20"", ""published"" : ""2011-01-24"" }'
+curl -X POST ""http://localhost:9200/dashboard/_refresh""
+</pre>
+<p>To retrieve the frequency of articles being published, we&#8217;ll use a <a href='http://www.elasticsearch.org/guide/reference/api/search/facets/date-histogram-facet.html'><em>date histogram</em> facet</a> in <em>ElasticSearch</em>.</p>
+<pre class='prettyprint lang-bash'>
+curl -X POST ""http://localhost:9200/dashboard/_search?pretty=true"" -d '
+{
+    ""query"" : { ""match_all"" : {} },
+
+    ""facets"" : {
+        ""published_on"" : {
+            ""date_histogram"" : {
+                ""field""    : ""published"",
+                ""interval"" : ""day""
+            }
+        }
+    }
+}
+'
+</pre>
+<p>Notice how we set the interval to <code>day</code>; we could easily change the granularity of the histogram to <code>week</code>, <code>month</code>, or <code>year</code>.</p>
+
+<p>This query will return JSON looking like this:</p>
+<pre class='prettyprint lang-js'>
+{
+    ""took"" : 2,
+    // ... snip ...
+    ""hits"" : {
+        ""total"" : 4,
+        // ... snip ...
+    },
+    ""facets"" : {
+        ""published"" : {
+            ""_type"" : ""histogram"",
+            ""entries"" : [
+                { ""time"" : 1293840000000, ""count"" : 1 },
+                { ""time"" : 1293926400000, ""count"" : 2 }
+                // ... snip ...
+            ]
+        }
+    }
+}
+</pre>
+<p>We are interested in the <code>facets.published.entries</code> array, as in the previous example. And again, we will need some HTML to hold our chart and load the data. Since the mechanics are very similar, please refer to the <a href='https://gist.github.com/900542/#file_chart.html'>full source code</a> for this example.</p>
+
+<p>With the JSON data, it&#8217;s very easy to create rich, interactive timeline in <em>Protovis</em>, by using a customized <a href='http://vis.stanford.edu/protovis/ex/area.html'><em>area chart</em></a>.</p>
+
+<p>The full, annotated code of the <code>Timeline()</code> JavaScript function is displayed below.</p>
+<pre class='prettyprint lang-js'>
+// =====================================================================================================
+// A timeline chart with Protovis - See http://vis.stanford.edu/protovis/ex/area.html
+// =====================================================================================================
+
+var Timeline = function(dom_id) {
+    if ('undefined' == typeof dom_id) {                 // Set the default DOM element ID to bind
+        dom_id = 'chart';
+    }
+
+    var data = function(json) {                         // Set the data for the chart
+        this.data = json;
+        return this;
+    };
+
+    var draw = function() {
+
+        var entries = this.data;                        // Set-up the data
+            entries.push({                              // Add the last ""blank"" entry for proper
+              count : entries[entries.length-1].count   // timeline ending
+            });
+        // console.log('Drawing, ', entries);
+
+        var w = 600,                                    // Set-up dimensions and scales for the chart
+            h = 100,
+            max = pv.max(entries, function(d) {return d.count;}),
+            x = pv.Scale.linear(0, entries.length-1).range(0, w),
+            y = pv.Scale.linear(0, max).range(0, h);
+
+        var vis = new pv.Panel()                        // Create the basis panel
+            .width(w)
+            .height(h)
+            .bottom(20)
+            .left(20)
+            .right(40)
+            .top(40);
+
+         vis.add(pv.Label)                              // Add the chart legend at top left
+            .top(-20)
+            .text(function() {
+                 var first = new Date(entries[0].time);
+                 var last  = new Date(entries[entries.length-2].time);
+                 return ""Articles published between "" +
+                     [ first.getDate(),
+                       first.getMonth() + 1,
+                       first.getFullYear()
+                     ].join(""/"") +
+
+                     "" and "" +
+
+                     [ last.getDate(),
+                       last.getMonth() + 1,
+                       last.getFullYear()
+                     ].join(""/"");
+             })
+            .textStyle(""#B1B1B1"")
+
+         vis.add(pv.Rule)                               // Add the X-ticks
+            .data(entries)
+            .visible(function(d) {return d.time;})
+            .left(function() { return x(this.index); })
+            .bottom(-15)
+            .height(15)
+            .strokeStyle(""#33A3E1"")
+
+            .anchor(""right"").add(pv.Label)              // Add the tick label (DD/MM)
+            .text(function(d) {
+                 var date = new Date(d.time);
+                 return [
+                     date.getDate(),
+                     date.getMonth() + 1
+                 ].join('/');
+             })
+            .textStyle(""#2C90C8"")
+            .textMargin(""5"")
+
+         vis.add(pv.Rule)                               // Add the Y-ticks
+            .data(y.ticks(max))                         // Compute tick levels based on the ""max"" value
+            .bottom(y)
+            .strokeStyle(""#eee"")
+            .anchor(""left"").add(pv.Label)
+                .text(y.tickFormat)
+                .textStyle(""#c0c0c0"")
+
+        vis.add(pv.Panel)                               // Add container panel for the chart
+           .add(pv.Area)                                // Add the area segments for each entry
+           .def(""active"", -1)                           // Auxiliary variable to hold mouse state
+           .data(entries)                               // Pass the data to Protovis
+           .bottom(0)
+           .left(function(d) {return x(this.index);})   // Compute x-axis based on scale
+           .height(function(d) {return y(d.count);})    // Compute y-axis based on scale
+           .interpolate('cardinal')                     // Make the chart curve smooth
+           .segmented(true)                             // Divide into ""segments"" (for interactivity)
+           .fillStyle(""#79D0F3"")
+
+           .event(""mouseover"", function() {             // On ""mouse over"", set segment as active
+               this.active(this.index);
+               return this.root.render();
+           })
+
+           .event(""mouseout"",  function() {             // On ""mouse out"", clear the active state
+               this.active(-1);
+               return this.root.render();
+           })
+
+           .event(""mousedown"", function(d) {            // On ""mouse down"", perform action,
+               var time = entries[this.index].time;     // eg filtering the results...
+               return (alert(""Timestamp: '""+time+""'""));
+           })
+
+           .anchor(""top"").add(pv.Line)                  // Add thick stroke to the chart
+           .lineWidth(3)
+           .strokeStyle('#33A3E1')
+
+           .anchor(""top"").add(pv.Dot)                   // Add the circle ""label"" displaying
+                                                        // the count for this day
+
+           .visible( function() {                       // The label is only visible when
+               return this.parent.children[0]           // its segment is active
+                          .active() == this.index;
+            })
+           .left(function(d) { return x(this.index); })
+           .bottom(function(d) { return y(d.count); })
+           .fillStyle(""#33A3E1"")
+           .lineWidth(0)
+           .radius(14)
+
+           .anchor(""center"").add(pv.Label)             // Add text to the label
+           .text(function(d) {return d.count;})
+           .textStyle(""#E7EFF4"")
+
+           .root.canvas(dom_id)                        // Bind the chart to DOM element
+           .render();                                  // And render it.
+    };
+
+    return {                                            // Create the public API
+        data   : data,
+        draw   : draw
+    };
+
+};
+</pre>
+<p>Again, you can see the full example <a href='/blog/assets/dashboards/timeline.html'>here</a>. Be sure to check out the documentation on the <a href='http://vis.stanford.edu/protovis/docs/area.html'><em>area</em></a> primitive in <em>Protovis</em>, and watch what happens when you change <code>interpolate(&#39;cardinal&#39;)</code> to <code>interpolate(&#39;step-after&#39;)</code>. You should have no problems to draw a <em>stacked area chart</em> from multiple facets, add more interactivity, and completely customize the visualization.</p>
+
+<p>The important thing to notice here is that the chart fully responds to any queries we pass to <em>ElasticSearch</em>, making it possible to simply and instantly visualize metrics such as <em>“Display publishing frequence of this author on this topic in last three months”</em>, with a query such as:</p>
+
+<pre><code> author:John AND topic:Search AND published:[2011-03-01 TO 2011-05-31]</code></pre>
+
+<h2 id='tldr'>tl;dr</h2>
+
+<p>When you need to make rich, interactive data visualization for complex, ad-hoc queries, using data returned by <em>facets</em> from <a href='http://www.elasticsearch.org/'><em>ElasticSearch</em></a> may well be one of the easiest ways to do it, since you can just pass the JSON response to a toolkit like <a href='http://vis.stanford.edu/protovis/'><em>Protovis</em></a>.</p>
+
+<p>By adapting the approach and code from this article, you should have a working example for your data in couple of hours.</p>",Karel Minarik,23,Data Visualization with ElasticSearch and Protovis 
+"<p><strong>elasticsearch</strong> version <code>0.16.1</code> has just been released. You can download it <a href=""/download"">here</a>. This is a minor release but it includes some really cool features and enhancements:</p>
+<h2>Text Query Family</h2>
+<p>A new family of queries called <a href=""/guide/reference/query-dsl/text-query.html"">text</a>. The aim with those is to simplify querying elasticsearch with regards to the analysis process (and should hopefully remove some confusion when using <code>term</code> query).</p>
+<h2>More Analysis Options</h2>
+<p>All the analyzers (mainly around language analyzers) part of Lucene <code>3.1</code> are now exposed. On top of that, several token filters were backported from Lucene 4.0 (synonym and word_delimiter).</p>
+<h2>Other</h2>
+<p>Minor additional enhancements (better global facets execution, custom boost per value for <code>string</code> type, and more) and important bug fixes are part of this release. Upgrade is highly recommended.</p>",Shay Banon,24,0.16.1 Released 
+"<p><strong>elasticsearch</strong> version <code>0.16.0</code> has just been released. You can download it <a href=""/download"">here</a>. This release is quite a big and important one, adding many new features, and fixes several major/critical bugs.</p>
+<p>Features/enhancements include the ability to update many more index level settings at runtime, several new search types, new facet called term_stats, faster facets execution all around,  upgrade to Lucene 3.1, improved support for many indices (memory wise), faster recover post full restart, much improved shard allocation logic to reduce load, and many more.</p>
+<p>Many bugs have also been fix, with several critical ones revolving around possible data loss. Its highly recommended to upgrade.</p>
+<p>All changes are listed in the <a href=""/download/2011/04/23/0.16.0.html"">0.16.0 download page</a>.</p>
+<h1>Upgrade Notes</h1>
+<p>The <code>_id</code> field is no longer indexed by default. No functionality is lost by it, but, if the <code>_id</code> field was used in term/terms query/filters, it should be replaced with the new ids query/filter. The issue explaining it is <a href=""https://github.com/elasticsearch/elasticsearch/issues/868"">here</a>.</p>",Shay Banon,25,0.16.0 Released 
+"<p><strong>elasticsearch</strong> has had the ability to control the <a href=""/guide/reference/api/search/search-type.html"">search type</a> since its inception. It includes the ability to control how to execute the &#8220;query&#8221; and &#8220;fetch&#8221; phases of a distributed search execution, as well as the ability to compute distributed frequencies across shards (the &#8220;dfs&#8221; phase).</p>
+<p>Two things that many users have been asking for is the ability to easily iterate over a very large result set as fast as possible, and the ability to just count results (possibly with facets) without actually fetching any hits back. Both features are now supported as new search types.</p>
+<h1>count</h1>
+<p>The first is the <code>count</code> search type. It allows to get back the total number of hits matching a query, with the ability to have facets configured in an optimized (implementation wise and performance wise) manner. For example:</p>
+<pre class=""prettyprint"">
+curl -XGET 'http://localhost:9200/twitter/tweet/_search?search_type=count' -d '{
+    ""query"": {
+        ""filtered"" : {
+            ""query"" : {
+                ""query_string"" : {
+                    ""query"" : ""some query string here""
+                }
+            },
+            ""filter"" : {
+                ""term"" : { ""user"" : ""kimchy"" }
+            }
+        }
+    }
+}
+'
+</pre>
+<p>The result will not include any hits, just the <code>total_hits</code> and optional facets results.</p>
+<h1>scan</h1>
+<p>The new <code>scan</code> type allows to scroll a very large result set in an optimized manner. When scrolling large result set using one of the other search types, there is an overhead (that increases the more we scroll &#8220;into&#8221; the result set) that comes from the fact that sorting needs to be computed (either by score, or custom). The <code>scan</code> type does no sorting, allowing it to optimize the scrolling process. It uses the same scroll mechanism when using other search types.</p>
+<p>The initial search execution bootstraps the scanning process:</p>
+<pre class=""prettyprint"">
+curl -XGET 'localhost:9200/_search?search_type=scan&amp;scroll=10m&amp;size=50' -d '
+{
+    ""query"" : {
+        ""match_all"" : {}
+    }
+}
+'
+</pre>
+<p>The <code>scroll</code> parameter indicates two things, the fact that we wish to scroll further into the result set, and the timeout value for maintaing the scroll &#8220;open&#8221; (the timeout value applies per request, not globally across the scroll process).</p>
+<p>The <code>size</code> parameter controls how many hits we want to get back. Note, the actual number of hits will be the the size provided times the number of shards, which is done in order to further optimize the scrolling process.</p>
+<p>The result of the search request is a <code>scroll_id</code>. The <code>scroll_id</code> should then be used as a parameter to the next search request:</p>
+<pre class=""prettyprint"">
+curl -XGET 'localhost:9200/_search/scroll?scroll=10m' -d 'c2NhbjsxOjBLMzdpWEtqU2IyZHlmVURPeFJOZnc7MzowSzM3aVhLalNiMmR5ZlVET3hSTmZ3OzU6MEszN2lYS2pTYjJkeWZVRE94Uk5mdzsyOjBLMzdpWEtqU2IyZHlmVURPeFJOZnc7NDowSzM3aVhLalNiMmR5ZlVET3hSTmZ3Ow=='
+</pre>
+<p>The results now will include hits, and another <code>scroll_id</code>, which should then be used as the parameter to the next scroll request. Also, the <code>scroll</code> parameter needs to be provided again in order to indicate we wish to continue the scrolling process.</p>
+<p>The &#8220;exit&#8221; point from the scrolling process is when no hits are returned back.</p>
+<p>-shay.banon</p>",Shay Banon,26,New Search Types 
+"<p>When using <strong>elasticsearch</strong>, many times the initial usage of an index in the cluster is bulk indexing data into it, and then moving into a more &#8220;streamlined&#8221; operations that are applied in realtime against it. When doing something like bulk indexing, changing the default settings of the index can improve the speed at which documents are indexed, but, those settings then do not really apply for the case where we want to do real time indexing of data.</p>
+<p>Some of those settings include <code>index.refresh_interval</code>, which defaults to <code>1s</code>. Setting this value to be higher can improve indexing speed. Other settings include low level Lucene settings such as <code>index.merge.policy.merge_factor</code>.</p>
+<p>In the upcoming 0.16 version (and already in master), there has been a lot of work going into being able to update a subset of index level settings in real time to improve that. It uses the same update settings <span class=""caps"">API</span> already exposed that allowed to change only the <code>index.number_of_replicas</code>.</p>
+<p>For example, lets say we are going to do some bulk indexing into an index, we can simply change the relevant index settings to the following:</p>
+<pre class=""prettyprint"">
+curl -XPUT localhost:9200/test/_settings -d '{
+    ""index"" : {
+        ""refresh_interval"" : ""-1"",
+        ""merge.policy.merge_factor"" : 30
+    }
+}'
+</pre>
+<p>The above will disable refreshing of the index completely, and change the merge factor to be 30. Once the bulk loading is done, we can get back to the default settings:</p>
+<pre class=""prettyprint"">
+curl -XPUT localhost:9200/test/_settings -d '{
+    ""index"" : {
+        ""refresh_interval"" : ""1s"",
+        ""merge.policy.merge_factor"" : 10
+    }
+}'
+</pre>
+<p>This makes <strong>elasticsearch</strong> even more elastic, allowing to munge it to adapt to what is currently required from it. The following are a list of issues listing the currently updateable settings:</p>
+<ul>
+	<li><a href=""https://github.com/elasticsearch/elasticsearch/issues/762"">762</a></li>
+	<li><a href=""https://github.com/elasticsearch/elasticsearch/issues/765"">765</a></li>
+	<li><a href=""https://github.com/elasticsearch/elasticsearch/issues/758"">778</a></li>
+	<li><a href=""https://github.com/elasticsearch/elasticsearch/issues/799"">799</a></li>
+</ul>
+<p>If you are missing some settings, ping the mailing list and we can see if they can also be updated dynamically.</p>",Shay Banon,27,Update Settings 
+"<p><strong>elasticsearch</strong> version <code>0.15.0</code> has just been released. You can download it <a href=""/download"">here</a>. This is another major release that includes several major features and of course, the typical set of bug fixes and enhancements. Some of the major features include:</p>
+<h1>Versioning</h1>
+<p>Versioning got its own <a href=""/blog/2011/02/08/versioning.html"">blog post</a> detailing how to use the feature. It now allows for a more interesting interaction model where we can use optimistic concurrency control when creating and updating documents.</p>
+<h1>Percolator</h1>
+<p><a href=""/blog/2011/02/08/percolator.html"">Percolator</a> is an interesting feature, basically turning search upside down: Instead of indexing docs and searching for them, during the indexing process docs are &#8220;percolated&#8221; to find out which queries match them. I can&#8217;t wait to see all of the cool things that will be built on top of <strong>elasticsearch</strong> utilizing this feature!.</p>
+<h1>Date Histogram</h1>
+<p>One of the more powerful features of elasticsearch are <a href=""/guide/reference/api/search/facets"">facets</a>, and one of my favorite facets is the <a href=""/guide/reference/api/search/facets/histogram-facet.html"">histogram</a> facet (think &quot;number of comments per month). When using it on a <code>date</code> field though, it lacks some important features.</p>
+<p>The <a href=""/guide/reference/api/search/facets/date-histogram-facet.html"">date_histogram</a> facet comes to solve and enhance the regular histogram by allowing you to &#8220;bucket&#8221; results by uneven intervals, like months and years.</p>
+<p>On top of that, you can provide a time zone to control exactly how the &#8220;buckets&#8221; of hits are defined &#8211; something you can&#8217;t really do on the client side.</p>
+<h1>Search Filter</h1>
+<p>The new <a href=""/guide/reference/api/search/filter.html"">filter</a> element to the search <span class=""caps"">API</span> will now allow you to do facet based navigation in a much simpler way. The new element filters out returned hits, but will <strong>not</strong> be applied to facet calculations. (although each facet can still have its own filters as well using the <code>facet_filter</code> element).</p>
+<p>This allows things like navigation-by-facets to be done in a much simpler manner, while controlling which facets are affected by it and which ones still apply only to the original user-supplied query.</p>
+<h1>Many More</h1>
+<p>There are many more performance improvements, enhancements, features, and bug fixes, all listed in the <a href=""/download/2011/02/18/0.15.0.html"">0.15 download page</a>.</p>
+<p>-shay.banon</p>",Shay Banon,28,0.15.0 Released 
+"<p>Upcoming <strong>elasticsearch</strong> 0.15 has some very cool features baked into it, one of those is <strong>versioning</strong>. Each document indexed in elasticsearch is now versioned and this allow for some cool operations done on it. But first, a simple example, starting with an index request:</p>
+<pre class=""prettyprint"">
+curl -XPUT 'localhost:9200/twitter/tweet/1?pretty=true' -d '{
+    ""message"" : ""elasticsearch now has versioning support!""
+}'
+</pre>
+<p>This is all business as usual, the interesting bit is in the response:</p>
+<pre class=""prettyprint"">
+{
+  ""ok"" : true,
+  ""_index"" : ""twitter"",
+  ""_type"" : ""tweet"",
+  ""_id"" : ""1"",
+  ""_version"" : 1
+}
+</pre>
+<p>Notice the <code>_version</code> returned when performing an index operation. This is now the version associated with this <code>tweet</code> registered with id <code>1</code>. If we do a get, we will get the version as well:</p>
+<pre class=""prettyprint"">
+curl -XGET 'localhost:9200/twitter/tweet/1?pretty=true'
+</pre>
+
+
+<pre class=""prettyprint"">
+{
+  ""_index"" : ""twitter"",
+  ""_type"" : ""tweet"",
+  ""_id"" : ""1"",
+  ""_version"" : 1, 
+  ""_source"" : {
+      ""message"" : ""elasticsearch now has versioning support!""
+   }
+}
+</pre>
+<p>Same applies when doing a search, we will get a <code>_version</code> per search hit.</p>
+<h1>Optimistic Concurrency Control</h1>
+<p>Now, the interesting bits can start, as we can use the versioning feature to perform <a href=""http://en.wikipedia.org/wiki/Optimistic_concurrency_control"">optimistic concurrency control</a>. For example, lets say we update the first tweet we indexed:</p>
+<pre class=""prettyprint"">
+curl -XPUT 'localhost:9200/twitter/tweet/1?pretty=true' -d '{
+    ""message"" : ""elasticsearch now has versioning support, cool!""
+}'
+</pre>
+<p>What we will get back is:</p>
+<pre class=""prettyprint"">
+{
+  ""ok"" : true,
+  ""_index"" : ""twitter"",
+  ""_type"" : ""tweet"",
+  ""_id"" : ""1"",
+  ""_version"" : 2
+}
+</pre>
+<p>Note the <code>_version</code> value has been incremented to <code>2</code>. But, we can also provide the version that we would like the update to be performed:</p>
+<pre class=""prettyprint"">
+curl -XPUT 'localhost:9200/twitter/tweet/1?version=2&amp;pretty=true' -d '{
+    ""message"" : ""elasticsearch now has versioning support, double cool!""
+}'
+</pre>
+<p>This will update the tweet again, and increment its version to <code>3</code>. Now, lets say someone wanted to do another update on a stale data, and execute the above again:</p>
+<pre class=""prettyprint"">
+curl -XPUT 'localhost:9200/twitter/tweet/1?version=2&amp;pretty=true' -d '{
+    ""message"" : ""elasticsearch now has versioning support, stale cool!""
+}'
+</pre>
+<p>What we would get now is a conflict, with the <span class=""caps"">HTTP</span> error code of <code>409</code> and a response:</p>
+<pre class=""prettyprint"">
+{
+  ""error"" : ""VersionConflictEngineException[[twitter][2] [tweet][1]: version conflict, current [3], required [2]]""
+}
+</pre>
+<p>This notion is very powerful, especially with the near real time aspect of <strong>elasticsearch</strong>. Version information is completely real time, thus, a get and an index can be repeated until the index has been refreshed without the need to call explicit refresh each time.</p>
+<h1>Put if Absent</h1>
+<p>The versioning feature now allow to perform a &#8220;put if absent&#8221; logic by using the <code>create</code> flag when indexing, for example, lets say we want to create the first tweet (its already there in the index):</p>
+<pre class=""prettyprint"">
+curl -XPUT 'localhost:9200/twitter/tweet/1?op_type=create&amp;pretty=true' -d '{
+    ""message"" : ""elasticsearch now has versioning support, but I am not absent...!""
+}'
+</pre>
+<p>Now, we would get an error that the document already exists, with an <span class=""caps"">HTTP</span> response code of <code>409</code>.</p>
+<pre class=""prettyprint"">
+{
+  ""error"" : ""DocumentAlreadyExistsEngineException[[twitter][2] [tweet][1]: document already exists]""
+}
+</pre>
+
+<h1>Other Nice Side Effects</h1>
+<ul>
+	<li>When deleting, and the document does not exists, a flag indicating that it was not found will be returned with an <span class=""caps"">HTTP</span> return code of <code>404</code>.</li>
+	<li>There is no longer a need to use the <code>create</code> operation type to improve indexing speed, a doc is automatically &#8220;created&#8221; (and not &#8220;updated&#8221;) if it does not exists.</li>
+</ul>",Shay Banon,29,Versioning 
+"<p>Percolator is another feature that will be part of upcoming <strong>elasticsearch</strong> 0.15. The percolator allows you to register queries against an index, and then send <code>percolate</code> requests which include a doc, and getting back the queries that match on that doc out of the set of registered queries.</p>
+<p>Think of it as the reverse operation of what <strong>elasticsearch</strong> does by nature: instead of sending docs, indexing them, and then running queries, one sends queries, registers them, and then sends docs and finds out which queries match that doc.</p>
+<p>As an example, a user can register an interest (a query) on all tweets that contain the word &#8220;elasticsearch&#8221;. For every tweet, one can percolate the tweet against all registered user queries, and find out which ones matched.</p>
+<h1>Sample Usage</h1>
+<p>First, create an index we will work with:</p>
+<pre class=""prettyprint"">
+curl -XPUT 'localhost:9200/twitter'
+</pre>
+<p>Next, we will register a percolator query with a specific name called <code>elasticsearch</code> against the <code>twitter</code> index:</p>
+<pre class=""prettyprint"">
+curl -XPUT localhost:9200/_percolator/twitter/elasticsearch -d '{
+    ""query"" : {
+        ""field"" : {
+            ""message"" : ""elasticsearch""
+        }
+    }
+}'
+</pre>
+<p>And now, we can percolate a document and see which queries match on it (note, its not really indexed!):</p>
+<pre class=""prettyprint"">
+curl -XGET localhost:9200/twitter/tweet/_percolate -d '{
+    ""doc"" : {
+        ""message"" : ""this new elasticsearch percolator feature is nice, borat style""
+    }
+}'
+</pre>
+<p>And the matched percolated queries are part of the response:</p>
+<pre class=""prettyprint"">
+{""ok"":true,""matches"":[""elasticsearch""]}
+</pre>
+<h1>Percolate on Index / Bulk</h1>
+<p>Percolation can also be done when executing an index request. Lets index the tweet from before, and also specify that it needs to be percolated by adding the <code>percolate</code> parameter:</p>
+<pre class=""prettyprint"">
+curl -XPUT 'localhost:9200/twitter/tweet/1?percolate=*' -d '{
+    ""message"" : ""this new elasticsearch percolator feature is nice, borat style""
+}'
+</pre>
+<p>And in the response, we will also get the percolated queries it matched on:</p>
+<pre class=""prettyprint"">
+{
+    ""ok"":true,
+    ""_index"":""twitter"",
+    ""_type"":""tweet"",
+    ""_id"":""1"",
+    ""_version"":1,
+    ""matches"":[""elasticsearch""]
+}
+</pre>
+<h1>Filtering Executed Queries</h1>
+<p>Since the registered percolator queries are just docs in an index, one can filter the queries that will be used to percolate a doc. For example, we can add a color field to the registered query:</p>
+<pre class=""prettyprint"">
+curl -XPUT localhost:9200/_percolator/twitter/elasticsearch -d '{
+    ""color"" : ""green"",
+    ""query"" : {
+        ""field"" : {
+            ""message"" : ""elasticsearch""
+        }
+    }
+}'
+</pre>
+<p>And then, we can percolate a doc that only matches on <code>green</code> percolated queries:</p>
+<pre class=""prettyprint"">
+curl -XGET localhost:9200/twitter/tweet/_percolate -d '{
+    ""doc"" : {
+        ""message"" : ""this new elasticsearch percolator feature is nice, borat style""
+    },
+    ""query"" : {
+        ""term"" : {
+            ""color"" : ""green""
+        }
+    }
+}'
+</pre>
+<p>With no matches received for <code>blue</code> percolated queries:</p>
+<pre class=""prettyprint"">
+curl -XGET localhost:9200/twitter/tweet/_percolate -d '{
+    ""doc"" : {
+        ""message"" : ""this new elasticsearch percolator feature is nice, borat style""
+    },
+    ""query"" : {
+        ""term"" : {
+            ""color"" : ""blue""
+        }
+    }
+}'
+</pre>
+<p>The filtering can also be passed as a query string to the percolated parameter when indexing a doc, for example:</p>
+<pre class=""prettyprint"">
+# matches
+curl -XPUT 'localhost:9200/twitter/tweet/1?percolate=color:green' -d '{
+    ""message"" : ""this new elasticsearch percolator feature is nice, borat style""
+}'
+
+# no match
+curl -XPUT 'localhost:9200/twitter/tweet/1?percolate=color:blue' -d '{
+    ""message"" : ""this new elasticsearch percolator feature is nice, borat style""
+}'
+</pre>
+<h1>How it Works</h1>
+<p>The <code>_percolator</code> which holds the repository of registered queries is just a another index in ES. The query is registered under a concrete index that exists (or will exist) in ES. That index name is represented as the type in the _percolator index (a bit confusing, I know&#8230;).</p>
+<p>The fact that the queries are stored as docs in another index (<code>_percolator</code>) gives us both the persistency nature of it, and the ability to filter out queries to execute using another query :).</p>
+<p>The <code>_percolator</code> index uses the <code>index.auto_expand_replica</code> setting to make sure that each data node will have access locally to the registered queries, allowing for fast query executing to filter out queries to run against a percolated doc.</p>
+<p>The percolate <span class=""caps"">API</span> uses the whole number of shards as percolating processing &#8220;engines&#8221;, both primaries and replicas. In our above case, if the test index has 2 shards with 1 replica, 4 shards will round robing in handing percolate requests. (dynamically) increasing the number of replicas will increase the number of percolation power.</p>
+<p>Note, percolate request will prefer to be executed locally, and will not try and round robin across shards if a shard exists locally on a node that received a request (for example, from <span class=""caps"">HTTP</span>). Its important to do some roundrobin in the client code among ES nodes (in any case its recommended).</p>",Shay Banon,30,Percolator 
+"<p>We have revamped the site look and feel, hopefully to make it more appealing and more expressive in explaining what <strong>elasticsearch</strong> is all about. There is still much work left to be done, but we are on it!.</p>
+<p>The first aim was to get a &#8220;single pager&#8221; listing the most important things <strong>elasticsearch</strong> is about in the front page. An effort to create a more formalized <a href=""/guide"">guide</a> has taken place and you should see more content starting to appear in it.</p>
+<p>Another effort is to try and get the community more involved in expanding the knowledge based around <strong>elasticsearch</strong>. This site itself is hosted on Github, and can be easily extended with new <a href=""/tutorials"">tutorials</a>, <a href=""/videos"">videos</a>, or even helping out on writing the <a href=""/guide"">guide</a>. <a href=""/community/contributing-site.html"">Contributing</a> is simple, and the community will be grateful for it.</p>
+<p>As a side note, in an effort to make contributions more simpler, I went ahead and migrated most of the docs to the Github wiki, only to realize that it has some very basic deficiencies (its not possible to follow the fork / send pull request idiom for example)&#8230; . So, all the docs were converted back to the site. That made for a fun weekend :).</p>
+<p>-shay.banon</p>",Shay Banon,31,New Site 
+"<p>ElasticSearch version <code>0.14.0</code> has just been released. You can download it <a href=""/download"">here</a>. This release includes bug fixes as well as several features:</p>
+<h2>Index Templates</h2>
+<p>In ElasticSearch, creating several indices is a very simple, more over, searching over more than one index gives a lot of flexibility when it comes to designing your search system. Index templates allow to define both settings and mapping template that will be applied when an index is created based on simple matching on the index name, for example:</p>
+<pre class=""prettyprint"">
+curl -XPUT localhost:9200/_template/template_1 -d '
+{
+    ""template"" : ""te*"",
+    ""settings"" : {
+        ""number_of_shards"" : 1
+    },
+    ""mappings"" : {
+        ""type1"" : {
+            ""_source"" : { ""enabled"" : false }
+        }
+    }
+}
+'
+</pre>
+<h2>Highlighting Based on _source</h2>
+<p>Up until now, highlighting required storing each separate field (usually in addition to storing to full source document). In 0.14, highlighting can now be performed directly on the _source document, causing considerable reduction in the index size when using highlighting.</p>
+<h2>Parent / Child Support</h2>
+<p>In ElasticSearch, changing a specific field in a document required full reindexing. With the new parent child support, certain use cases can use it in order to index child document to an existing parent document, and then issue queries that will be executed on the child docs, but resulting in the parent docs.</p>
+<p>This include simple mapping definition in the child doc specifying the parent doc type, as well as reusing the routing feature added in 0.13 to make sure each child doc will end up in the same shard as the parent doc (thus reducing the cost of the &#8220;join&#8221; process to be in shard).</p>
+<p>Two queries have been added to the Query <span class=""caps"">DSL</span>, <code>has_child</code> and <code>top_children</code> that allow to query child docs and return parent docs.</p>
+<p>This feature is by no means complete, there is still work left in making it more usable (for example, returning the child docs as part of the search request), but the gist is there.</p>
+<h2>Network Optimizations</h2>
+<p>ElasticSearch is being used heavily on cloud environments, such as ec2, where network resources are constrained. In 0.14, there has been several network optimizations to handle it better on top of the already existing feature of compressing all network traffic (by setting <code>transport.tcp.compress</code> to <code>true</code>).</p>
+<h2>Analyze <span class=""caps"">API</span></h2>
+<p>Even wondered how text gets broken down into tokens that end up being indexed? The analyze <span class=""caps"">API</span> allows to provide a text that will go through the analysis process and output the tokens (with the meta information) generated from it. Its as simple as calling:</p>
+<pre class=""prettyprint"">
+curl -XGET localhost:9200/[index_name]/_analyze?text=this is a test
+</pre>
+<h2>Many more</h2>
+<p>There are many more small features and enhancements, as well as important bug fixes. Make sure to read the release notes on the wiki.</p>
+<p>-shay.banon</p>",Shay Banon,32,0.14.0 Released 
+"<p>ElasticSearch version <code>0.13.0</code> has just been released. You can download it <a href=""/download"">here</a>. This release includes important bug fixes (most important one is a possible corruption in the index data) and some new features, including:</p>
+<h2>More Mapping Features</h2>
+<p>Support for a new IP (ipv4) type (that is automatically detected) allowing to do range queries (for example) on IP ranges. More enhancements to dynamic templates matching, a compression threshold on the source field, and an analyzer mapping field.</p>
+<h2>Explicit Shard Routing Control</h2>
+<p>Up until 0.13, documents were routed to the relevant shard based on their respective type and id values. In this version, they are not routed only by the id value by default (check the upgrade notes below), and they can be routed based on a custom value. This means that doing searches can be much faster when knowing in advance the list of routing values the search should executed on.</p>
+<p>For example, when indexing a blog post as a single document, and a blog comment as another document, the comment document can be routed to the same shard as the blog post using the blog post id. This means that when wanting to search only on things relating to a specific blog post, only a single shard needs to be searched on and not all shards of that index.</p>
+<p>This is very similar to the multi indices feature (and the ability to search on several of them), but provides a much higher control of routing within an index.</p>
+<h2>Improved Support for Large Number of Indices</h2>
+<p>Large number of indices now consume much less resources on the cluster as a whole, and a new <span class=""caps"">API</span> allowing to close and open an index has been added.</p>
+<h2>Many more smaller features</h2>
+<p>There are many more smaller features, with the list available <a href=""https://github.com/elasticsearch/elasticsearch/issues/closed"">here</a> under the 0.13 tag.</p>
+<h2>Upgrade Notes</h2>
+<p>Two important nodes when upgrading to 0.13:</p>
+<p>The first, due to the change in the default routing mechanism of routing only based on the id and not the type, existing systems upgrading to the new version must set the <code>cluster.routing.operation.use_type</code> to <code>true</code> in order to maintain the same hashing mechanism as in previous releases.</p>
+<p>The second, the location of the index files have changed. It used to be stored under the &#8220;work&#8221; directory, but it has been moved to a new &#8220;data&#8221; directory. This means two things, if you are using the default, then rename the work directory under the installation to data. If <code>path.work</code> was being explicitly set, change the setting to <code>path.data</code>.</p>
+<p>This was done in order to simplify the management of files elasticsearch created. Now, there are three places where data is created: <code>path.data</code> for index related data information, <code>path.logs</code> for the location of the logs, and <code>path.work</code> for temporal data.</p>
+<p>-shay.banon</p>",Shay Banon,33,0.13.0 Released 
+"<p>ElasticSearch version <code>0.12.0</code> has just been released. You can download it <a href=""/download"">here</a>. This release is a bit early due to a major bug found with full cluster recovery when using more than one index and the local gateway.</p>
+<p>Along the way, some features were added as well, those include:</p>
+<h2>More Script Language Support</h2>
+<p>On top of mvel, there is now support for JavaScript, Python, and Groovy for executing scripts. Scripts can be used in different components within elasticsearch, including custom scoring, facets, and others. This support is going to be utilized in future features as well.</p>
+<h2>Dynamic Templates</h2>
+<p>Dynamic schema introduction is already a part of elasticsearch, but sometimes, the defaults are just not good enough. Dynamic templates allow to control different mappings aspects while still retaining the dynamic nature of a document. A dynamic template, for example, can turn a single field automatically into a `multi_field` or have fields matching a template be stored.</p>
+<h2>Geo Overhaul</h2>
+<p>The geo support aim was to support multiple location per document. The current design was problematic in supporting that, so a new design was implemented. This sadly requires a full reindexing if using geo features, as well as requiring to explicitly define `geo_point` mapping type.</p>
+<h2>Facets Improvements</h2>
+<p>Both the `term` and the `statistical` facets now can be executed on more than one field and aggregating the results across all fields values.</p>
+<h2>Query Filters Improvements</h2>
+<p>Fine grained control over which filter results are cached or not, with sensible defaults per filter (as filters behave differently).</p>
+<h2>Other</h2>
+<p>Several small bug fixes and improvements. Note, if you use the thrift client, the thrift protocol has changed not to include some keywords in certain langs. Make sure to regenerate the client code.</p>
+<p>-shay.banon</p>",Shay Banon,34,0.12.0 Released 
+"<p>ElasticSearch version <code>0.11.0</code> has just been released. You can download it <a href=""/download"">here</a>. This is a major release for elasticsearch, both in terms of feature set as well as stability.</p>
+<p>Major list of features include:</p>
+<h2>Zero Conf Persistency</h2>
+<p>Out of the box long term persistency using a &#8220;local&#8221; gateway dubbed <a href=""/blog/2010/09/27/zero_conf_persistency.html"">zero conf persistency</a>.</p>
+<h2>River</h2>
+<p>Generic support for <a href=""/blog/2010/09/28/the_river.html"" title=""s"">river</a> which are services running within the elasticsearch cluster indexing streams of data. Rivers exists for <a href=""/blog/2010/09/28/the_river.html"">twitter</a>, <a href=""/blog/2010/09/28/the_river_searchable_couchdb.html"">couchdb</a>, and <a href=""/blog/2010/09/28/the_river_rabbitmq.html"">rabbitmq</a>.</p>
+<h2>Bulk <span class=""caps"">API</span></h2>
+<p>A new <span class=""caps"">API</span> to do bulk indexing of data, greatly increasing the throughput of the indexing process. Details <a href=""/guide/reference/api/bulk.html"">here</a>.</p>
+<h2>Thrift <span class=""caps"">REST</span> Transport</h2>
+<p>A Thrift based <span class=""caps"">REST</span> transport (mimicking <span class=""caps"">HTTP</span>) for faster execution compared with plain <span class=""caps"">HTTP</span>.</p>
+<h2>Minor Features</h2>
+<p>Minor features include <a href=""/guide/reference/mapping/source-field.html"">_source fields</a> and the ability to use them in plain fields, <a href=""/guide/reference/api/search/named-filters.html"">named_filters</a>, improved geo support, faster query_string and field queries execution, and of course, bug fixes.</p>
+<p>-shay.banon</p>",Shay Banon,35,0.11.0 Released 
+"<p><a href=""/blog/2010/09/28/the_river.html"">The River</a> allows to easily define data sources and have elasticsearch index them. The example provided in the post is twitter, but a river is an open <span class=""caps"">API</span> and can have different implementations. One of those coming out at 0.11 is <a href=""http://couchdb.apache.org/"">CouchDB</a>.</p>
+<p>The <a href=""http://github.com/elasticsearch/elasticsearch/issues/382"">CouchDB River</a> allows to automatically index couchdb and make it searchable using the excellent <a href=""http://guide.couchdb.org/draft/notifications.html"">_changes</a> stream couchdb provides. Setting it up is as simple as executing the following against elasticsearch:</p>
+<pre class=""prettyprint lang-java"">
+curl -XPUT 'localhost:9200/_river/my_db/_meta' -d '{
+    ""type"" : ""couchdb"",
+    ""couchdb"" : {
+        ""host"" : ""localhost"",
+        ""port"" : 5984,
+        ""db"" : ""my_db"",
+        ""filter"" : null
+    }
+}'
+</pre>
+<p>This call will create a river that uses the <code>_changes</code> stream to index all data within couchdb. Moreover, any &#8220;future&#8221; changes will automatically be indexed as well, making your search index and couchdb synchronized at all times.</p>
+<p>On top of that, in case of a failover, the couchdb river will automatically be started on another elasticsearch node, and continue indexing from the last indexed seq.</p>
+<p>As you can see, elasticsearch can easily have several couchdb rivers (and other types of rivers) running at the same time, all pointing to different databases and indexing them into different indices (or the same index, you choose) using the same elasticsearch cluster.</p>
+<p>This means that being able to search couchdb has just become really really simple. The couchdb river is provided as a plugin (in upcoming 0.11) and can be installed using <code>plugin -install river-couchdb</code>.</p>
+<p>-shay.banon</p>",Shay Banon,36,Searchable CouchDB 
+"<p>Another <a href=""/blog/2010/09/28/the_river.html"">River</a> implementation, <a href=""http://github.com/elasticsearch/elasticsearch/issues/380"">RabbitMQ River</a> allowing to automatically index a rabbitmq queue. The format of the messages follows the new <a href=""http://github.com/elasticsearch/elasticsearch/issues/371"">bulk api</a> format:</p>
+<pre class=""prettyprint lang-js"">
+{ ""index"" : { ""_index"" : ""twitter"", ""_type"" : ""tweet"", ""_id"" : ""1"" }
+{ ""tweet"" : { ""text"" : ""this is a tweet"" } }
+{ ""delete"" : { ""_index"" : ""twitter"", ""_type"" : ""tweet"", ""_id"" : ""2"" } }
+{ ""create"" : { ""_index"" : ""twitter"", ""_type"" : ""tweet"", ""_id"" : ""1"" }
+{ ""tweet"" : { ""text"" : ""another tweet"" } }    
+</pre>
+<p>Creating the rabbitmq river is as simple as:</p>
+<pre class=""prettyprint"">
+curl -XPUT 'localhost:9200/_river/my_river/_meta' -d '{
+    ""type"" : ""rabbitmq"",
+}'
+</pre>
+<p>One of the nice features of this river is automatically bulking queue messages if the queue is overloaded, allowing for faster catchup with the messages streamed into the queue.</p>
+<p>-shay.banon</p>",Shay Banon,37,RabbitMQ River 
+"<p>One of the problems elasticsearch aims at solving is &#8220;the river&#8221; problem. The River is the stream of constant data and somehow finding a way to waddle through it and make something meaningful out of it.</p>
+<p>That constant data stream can come in different forms and from different sources. It can come directly from a user in an application that uses elasticsearch directly. For example, publishing a new status message, a new blog comment, or a review of a restaurant on apps that automatically apply that change to elasticsearch.</p>
+<p>Another option is for the data to be pushed to elasticsearch. For example, <a href=""http://github.com/cloudera/flume"">flume</a>, cloudera log aggregator, can use an <a href=""http://github.com/tallpsmith/elasticflume"">elasticsearch sink</a> to push log changes to elasticsearch.</p>
+<p>The last option, and the one discussed here is where data is pulled from one source and applied to elasticsearch. As an example, someone can write a twitter component that listens on twitter stream updates, and apply them to elasticsearch.</p>
+<p>Those type of components, aside from writing the core code that does it, require additional services to be provided for them. For example, the twitter component will require failover support (if it fails, start it on another node), and possibly state storage (what was the last tweet indexed).</p>
+<p><a href=""http://github.com/elasticsearch/elasticsearch/issues/377"">Rivers</a> in elasticsearch provides just that. A river is a service running within elasticsearch cluster and tries and solve the third type of integration point mentioned above. Rivers are allocated to nodes within the cluster. Are provided with automatic failover in case of node failure, and allow to store state associated with them.</p>
+<p>The River implementation is a bit of a cheat ;), rivers are simply represented as different types within an index called <code>_river</code>. Creating them is as simple as creating a document named <code>_meta</code> within the river (type). Deleting them is just a matter of deleting the river (type). And last, they can easily store state as addition document(s) within the index type.</p>
+<p>ElasticSearch has a framework support for rivers, and upcoming 0.11 version will come with several different implementations of rivers. The one covered here is the <a href=""http://github.com/elasticsearch/elasticsearch/issues/378"">twitter river</a>. Here is how it can be created:</p>
+<pre class=""prettyprint lang-java"">
+curl -XPUT localhost:9200/_river/my_twitter_river/_meta -d '
+{
+    ""type"" : ""twitter"",
+    ""twitter"" : {
+        ""user"" : ""twitter_user"",
+        ""password"" : ""twitter_passowrd""
+    }
+}
+'
+</pre>
+<p>Once created, the <a href=""http://dev.twitter.com/pages/streaming_api"">global stream of changes, a.k.a the hose</a> will start to be indexed into elasticsearch (including all the relevant metadata, like geo location, places, replies, and so on). Think about the power and capabilities you get with all that data indexed in elasticsearch ;).</p>
+<p>Deleting the twitter river is as simple as:</p>
+<pre class=""prettyprint lang-java"">
+curl -XDELETE localhost:9200/_river/my_twitter_river
+</pre>
+<p>The twitter river will be provided as a plugin in 0.11, and can be easily installed using <code>plugin -install river-twitter</code>.</p>",Shay Banon,38,The River 
+"<p>With the new &#8220;local gateway&#8221;, upcoming elasticsearch version 0.11 will provide zero conf long term persistency out of the box.</p>
+<p>In the <a href=""/blog/2010/02/16/searchengine_time_machine.html"">Search Engine Time Machine</a> post, elasticsearch support for long term persistency is explained. The idea is built around providing long term persistency using a shared storage solution. A common storage option between all nodes (shared file system, S3, <span class=""caps"">HDFS</span>) is used to asynchronously write changes in both the cluster meta data (indices created, mappings) and the actual indices to it.</p>
+<p>The shared storage option has several benefits. One obvious one is the ability to store (parts) the index in memory, and still maintain long term persistency in case of full cluster shutdown. It also provides a native solution if backup is required of the indices (to s3 for example).</p>
+<p>It does come with an overhead though, the first is the actual need for a shared storage solution for long term persistency, which does complicate things for simpler and get it started scenarios. The other is the fact that potentially very large data set will be stored, where simply using a shared storage is an overhead that is unacceptable (mainly due to cost).</p>
+<p>In upcoming 0.11 version, another gateway option is provided, called local gateway. The local gateway option allows the cluster to restore both its state and the indices from each node local storage (local file system). And, in order to provide the best out of the box experience, this gateway is now the default one set.</p>
+<p>The cluster state, which includes the indices created, mappings, and other meta information is versioned and stored on the nodes. In order to recover it, the <code>gateway.recovery_after_nodes</code> (or <code>gateway.recovery_after_master_nodes</code>) should be set to high enough value out of the total expected cluster size in order to ensure latest state recovery.</p>
+<p>Shards are recovered once a quorum (by default) of the shard with its replicas is found. For this reason (and others) it is recommended to have at least 2 replicas per shard set.</p>
+<p>Indices (and the transaction log) must be file system based, to provide recoverability in case of full shutdown.</p>
+<p>The local gateway allows for simple to use long term persistency with elasticsearch and should simplify greatly using elasticsearch with full persistency support.</p>
+<p>-shay.banon</p>",Shay Banon,39,Zero Conf Persistency 
+"<p>ElasticSearch version <code>0.10.0</code> has just been released. You can download it <a href=""/download"">here</a>. This is a major release for elasticsearch, both in terms of feature set as well as stability.</p>
+<p>Major partial list of features include:</p>
+<h2>Geo Support</h2>
+<p>Geo location support has been added, allowing to have geo query based capabilities (distance, bounding box, polygon) as well as facet support (distance based). More info can be found <a href=""/blog/2010/08/16/geo_location_and_search.html"">here</a>.</p>
+<h2>Update Number of Replicas Dynamically</h2>
+<p>Allow to change the number of replicas an index has using a simple <span class=""caps"">API</span>.</p>
+<h2>More Facets</h2>
+<p>Range, filter, and more term facet options.</p>
+<h2>More Mapping Options</h2>
+<p>Ability to compress the <code>_source</code> field with extensive optimization at decompression only when needed (for example, decompressing directly down into the <span class=""caps"">REST</span> stream).</p>
+<h2>New Gateway Structure</h2>
+<p>A new gateway structure reducing the chances of gateway corruption as well as building the basis for future options such as saving versions of the gateway and allowing to recover from them. Here is the <a href=""http://gist.github.com/546494"">upgrade script</a>.</p>
+<h2>Transport Compression</h2>
+<p>The ability to configure the communication between nodes to work in a compressed mode, as well as different components using it by default (for example, peer recovery fetches the index in compressed mode).</p>
+<h2>Minor Enhancements, Bugs Squashing</h2>
+<p>A lot of work has going into improved stability of elasticsearch, better memory management, and major bugs squashing. ElasticSearch is being used by several companies to index very large amount of data with large cluster size successfully with snapshot versions of 0.10.</p>
+<p>-shay.banon</p>",Shay Banon,40,0.10.0 Released 
+"<img src=""/images/set3/map.png"" height=""120px"" class=""left-img""></img>
+
+<p>One of the coolest search technology combinations out there are the ability to combine geo and search. Queries such as give me all the restaurants that serves meat ([insert your query here]) within 20 miles from me, or create a distance heat map of them, is slowly becoming a must have for any content website. This is becoming even more relevant with new browsers supporting <a href=""http://html5demos.com/geo"">Geolocation <span class=""caps"">API</span></a>.</p>
+<p>Already in <a href=""http://github.com/elasticsearch/elasticsearch"">master</a> (and in the upcoming <code>0.9.1</code> release), elasticsearch comes with rich support for geo location. Lets take a drive down the geo support path:</p>
+<h2>Indexing Location Aware Documents</h2>
+<p>In general, documents indexed are not required to define any predefined mapping in order to use geo location features, but they should conform to a convention if none is defined. For example, lets take an example of a &#8220;pin&#8221; that we want to index its location and maybe some tags its associated with:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""pin"" : {
+        ""location"" : {
+            ""lat"" : 40.12,
+            ""lon"" : -71.34
+        },
+        ""tag"" : [""food"", ""family""],
+        ""text"" : ""my favorite family restaurant""
+    }
+}
+</pre>
+<p>The <code>location</code> element is a &#8220;geo enabled&#8221; location since it has <code>lat</code> and <code>lon</code> properties. Once one follows the above conventions, all geo location features are enabled for <code>pin.location</code>.</p>
+<p>If explicit setting is still required, then its easy to define a mapping that defines a certain property as a <code>geo_point</code>. Here is an example:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""pin"" : {
+        ""properties"" : {
+            ""location"" : {
+                ""type"" : ""geo_point""
+            }
+        }
+    }
+}
+</pre>
+<p>By defining the <code>location</code> property as <code>geo_point</code>, this means that now we can index location data in many different formats, starting from the lat/lon example above, up to <code>geohash</code>. For information on all the available formats, check out <a href=""http://github.com/elasticsearch/elasticsearch/issues/278"">278</a>.</p>
+<div class=""rounded"" style=""color: #f5f5f5; background: #333; padding: 1em; margin: 1em 0"">
+<strong>Update:</strong> The automatic mapping of “geo enabled” properties has been disabled since publishing this article. You have to provide the correct mapping for geo properties. Please see the <a href=""/guide/reference/mapping/geo-point-type.html"">documentation</a>.
+</div>
+<h2>Find By Location</h2>
+<p>The first thing after indexing location aware documents, is being able to query them. There are several ways to be able to query such information, the simplest one is by <a href=""http://github.com/elasticsearch/elasticsearch/issues/279"">distance</a>. Here is an example:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""filtered"" : {
+        ""query"" : {
+            ""field"" : { ""text"" : ""restaurant"" }
+        },
+        ""filter"" : {
+            ""geo_distance"" : {
+                ""distance"" : ""12km""
+                ""pin.location"" : {
+                    ""lat"" : 40,
+                    ""lon"" : -70
+                }
+            }
+        }
+    }
+}
+</pre>
+<p>The above will search for all documents with <code>text</code> of <code>restaurant</code> that exists within <code>12km</code> of the provided location. The location point can accept several different formats as well, detailed at <a href=""http://github.com/elasticsearch/elasticsearch/issues/279"">279</a>.</p>
+<p>The next query supported is a <a href=""http://github.com/elasticsearch/elasticsearch/issues/290"">bounding box query</a>, allowing to restrict the results into a geo box defined by the top left, and bottom right coordinates. Here is an example:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""filtered"" : {
+        ""query"" : {
+            ""field"" : { ""text"" : ""restaurant"" }
+        },
+        ""filter"" : {
+            ""geo_bounding_box"" : {
+                ""pin.location"" : {
+                    ""top_left"" : {
+                        ""lat"" : 40.73,
+                        ""lon"" : -74.1
+                    },
+                    ""bottom_right"" : {
+                        ""lat"" : 40.717,
+                        ""lon"" : -73.99
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+<p>The last, and the most advance form of geo query is a <a href=""http://github.com/elasticsearch/elasticsearch/issues/294"">polygon based search</a>, here is an example:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""filtered"" : {
+        ""query"" : {
+            ""field"" : { ""text"" : ""restaurant"" }
+        },
+        ""filter"" : {
+            ""geo_polygon"" : {
+                ""pin.location"" : {
+                    ""points"" : [
+                        {""lat"" : 40, ""lon"" : -70},
+                        {""lat"" : 30, ""lon"" : -80},
+                        {""lat"" : 20, ""lon"" : -90}
+                    ]
+                }
+            }
+        }
+    }
+}
+</pre>
+<h2>Sorting</h2>
+<p>The ability to sort results not just by ranking (how relevant is the document to the query), but also by distance allows for much greater geo usability. There is now a new <code>_geo_distance</code> <a href=""http://github.com/elasticsearch/elasticsearch/issues/306"">sort type</a> allowing to sort based on a distance from a specific location:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""sort"" : [
+        {
+            ""_geo_distance"" : {
+                ""pin.location"" : [-40, 70],
+                ""order"" : ""asc"",
+                ""unit"" : ""km""
+            }
+        }
+    ],
+    ""query"" : {
+        ""field"" : { ""text"" : ""restaurant"" }
+    }
+}
+</pre>
+<p>On top of that, elasticsearch will now return all the values per hit of fields sorted on, allowing to easily display this important information.</p>
+<h2>Faceting</h2>
+<p>Faceting, the ability to show an aggregated views on top of the search results go hand in hand with geo. For example, one would like to get the number of hits matching the search query within 10 miles, 20 miles, and above from his location. The <a href=""http://github.com/elasticsearch/elasticsearch/issues/286"">geo distance</a> facet provides just that:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""query"" : {
+        ""field"" : { ""text"" : ""restaurant"" }
+    },
+    ""facets"" : {
+        ""geo1"" : {
+            ""geo_distance"" : {
+                ""pin.location"" : {
+                    ""lat"" : 40,
+                    ""lon"" : -70
+                },
+                ""ranges"" : [
+                    { ""to"" : 10 },
+                    { ""from"" : 10, ""to"" : 20 },
+                    { ""from"" : 20, ""to"" : 100 },
+                    { ""from"" : 100 }
+                ]
+            }
+        }
+    }
+}
+</pre>
+<h2>Summary</h2>
+<p>The combination of search with geo is a natural one, and slowly becoming critical to any (web) application, especially with <span class=""caps"">HTML</span> 5 and mobile devices becoming more and more widespread. elasticsearch upcoming geo support brings this integration into a whole new level, and enables application to provide rich geo and search functionality easily (ohh, and scale ;) ).</p>
+<p>-shay.banon</p>",Shay Banon,41,Geo Location and Search 
+"<p>ElasticSearch version <code>0.9.0</code> has just been released. You can download it <a href=""/download"">here</a>. This is a major release for elasticsearch, both in terms of feature set as well as stability.</p>
+<p>Major partial list of features include:</p>
+<h2>Facets Support</h2>
+<p><a href=""/guide/reference/api/search/facets/"">Facets</a> allow to provide aggregated data view correlating to the search query executed. ElasticSearch now comes with several facets implementations, including the typical &#8220;terms&#8221; facets (allowing to get the most popular terms, and how often they occur), statistical facets providing statistical information on numeric fields including count, total, mean, min, max, variance, sum of squares, and standard deviation. And, the coolest facet type, histogram facets, which based on a field, break it into buckets and provide data on the relevant buckets derived from the same field, another field, or a script.</p>
+<h2>Scripting Support</h2>
+<p>Added as a general feature within elasticsearch, <a href=""/guide/reference/modules/scripting.html"">scripting</a> allows to define scripts that are evaluated at runtime and can be used in different elasticsearch features, such as facets, script search fields, script filter, and so on.</p>
+<h2>More Queries and Filters</h2>
+<p>Additional queries and filters have been added. Thanks to the Query <span class=""caps"">DSL</span> of elasticsearch, adding queries is a snap. Queries include fuzzy query, custom score query (based on scripts), script filter, and/or/not filters, and more.</p>
+<h2>Improved Gateway Recovery</h2>
+<p>A major feature in elasticsearch, allowing to reuse existing index files when recovering from the gateway after a full cluster restart significantly reducing the time it takes to recover from the gateway. This include additions to the gateway behavior including the ability to control when the initial recovery will happen as a factor of the number of nodes in the cluster and time. Also, the shutdown <span class=""caps"">API</span> has been enhanced to better handle full cluster shutdown.</p>
+<h2>Script Search Fields</h2>
+<p>The ability to load custom data (based on non stored fields) as part of the search request.</p>
+<h2>Improves Fluent Java / Groovy <span class=""caps"">API</span></h2>
+<p>The Java / Groovy <span class=""caps"">API</span> has been greatly enhanced to provide more fluent <span class=""caps"">API</span> execution.</p>
+<h2><span class=""caps"">AWS</span> Cloud Specific Plugin</h2>
+<p>The cloud <span class=""caps"">API</span> has been rewritten to use directly the amazon <span class=""caps"">AWS</span> <span class=""caps"">API</span>, providing better stability and features when using <span class=""caps"">AWS</span>. The cloud plugin now only works with Amazon <span class=""caps"">AWS</span>.</p>
+<h2>Stability, Bug Squashing, and Memory Usage Improvements</h2>
+<p>A lot of work has going into improved stability of elasticsearch, better memory management, and major bugs squashing. ElasticSearch is being used by several companies to index very large amount of data with large cluster size successfully with snapshot versions of 0.9.</p>
+<p>-shay.banon</p>",Shay Banon,42,0.9.0 Released 
+"<p>ElasticSearch version <code>0.8.0</code> has just been released. You can download it <a href=""/download"">here</a>. This release includes several bug fixes and memory footprint improvements, and one major feature, Hadoop integration. This allows to use Hadoop <span class=""caps"">HDFS</span> as elasticsearch gateway storage, and enabling it is as simple as:</p>
+<p>Installing the hadoop plugin using <code>bin/plugin -install hadoop</code>.</p>
+<p>Changing the configuration to include:</p>
+<pre class=""prettyprint"">
+gateway:
+    type: hdfs
+    hdfs:
+        uri: hdfs://host:port
+        path: path/to/folder
+</pre>
+<p>-shay.banon</p>",Shay Banon,43,0.8.0 Released 
+"<p>ElasticSearch version <code>0.7.1</code> has just been released. You can download it <a href=""/download"">here</a>. This release fixed a major bug when indexing large documents resulting in storing additional null bytes (and returning them).</p>
+<p>Version <code>0.7.1</code> also brings a major feature to elasticsearch, recovery throttling. In elasticsearch, there are two types of recovery. The first, is recovery from the gateway. This happens only when the first shard is allocated in the cluster. The second recovery happens when nodes move or allocate shards around. The recovery process in both cases include recovering both each shard index files, and the transaction log.</p>
+<p>Up until version <code>0.7.1</code>, elasticsearch would basically go full force in performing the recovery. If a new node would join the cluster, all the possible shards would be allocated to it, and all will perform recovery in parallel. More over, each single shard index file recovery will happen in parallel as well.</p>
+<p>This can lead to a heavy load on the nodes, making them less responsive for on going operations performed on them. From version <code>0.7.1</code>, recovery throttling is enabled, basically allowing only for a controlled number of concurrent recovery operations, and concurrent stream (single shard index file) recovery operation. Both counts are maintained on the node level, regardless of the number of indices or shards.</p>
+<p>The <code>indices.recovery.throttler.concurrent_recoveries</code> setting controls the number of concurrent recoveries allowed (shard recoveries). It defaults to the number of cores. The <code>indices.recovery.throttler.concurrent_streams</code> control the concurrent shard index file recoveries, and defaults to the number of cores as well.</p>
+<p>-shay.banon</p>",Shay Banon,44,0.7.1 Released 
+"<p>ElasticSearch version <code>0.7.0</code> has just been released. You can download it <a href=""/download"">here</a>. This release brings much improved stability, and several features:</p>
+<h2>Zen Discovery</h2>
+<p>A discovery module called <a href=""/guide/reference/modules/discovery/zen.html"">zen</a> built from the ground up to work well, and fast with elasticsearch. This is now the default discovery module, with the jgroups discovery module moving to be provided as a plugin.</p>
+<h2>Groovy Client</h2>
+<p>A native groovy client providing a Groovyfied <span class=""caps"">API</span> build on top of the native Java <span class=""caps"">API</span>. More details provided in the <a href=""/blog/2010/04/19/elasticseach_just_got_groovy.html"">ElasticSearch Just Got Groovy</a> blog post. As a side note, anybody up for building a Scala/JRbuy client?</p>
+<h2>Cloud</h2>
+<p>First and foremost, native cloud support, providing zero conf cloud discovery ( No Special Node&#8482; ) and the ability to persist long term index storage on different cloud providers blob stores. More information can be found in the <a href=""/blog/2010/05/11/here-comes-the-cloud.html"">Here Comes the Cloud</a> blog post.</p>
+<h2>Memcached Transport</h2>
+<p>For that extra oomph when <span class=""caps"">HTTP</span> is not fast enough (mainly from other languages), elasticsearch supports a subset of the memcached protocol. Basically, the implementation implements <span class=""caps"">REST</span> on top of memcached (as much as possible). More info can be found <a href=""/guide/reference/modules/memcached.html"">here</a>.</p>
+<h2>Simpler Plugin Management</h2>
+<p>Many things in elasticsearch are implemented as a plugin. For example, the cloud support or memcached support are implemented as plugins. Now, installing a plugin is as simple as issuing the following command:</p>
+<pre class=""prettyprint"">
+bin/plugin -install cloud
+bin/plugin -install transport-memcached
+</pre>
+<h2>Analysis <span class=""caps"">ICU</span></h2>
+<p>Better support when working with unicode through the <span class=""caps"">ICU</span> analysis plugin. More info <a href=""/guide/reference/index-modules/analysis/icu-plugin.html"">here</a>.</p>
+<h2>More APIs</h2>
+<p>More information on nodes using the new Node stats <span class=""caps"">API</span>, as well as the ability to restart a node.</p>
+<h2><span class=""caps"">JVM</span> Clients</h2>
+<p>Simpler dependency management, requiring only lucene as a dependency.</p>
+<h2>XContent</h2>
+<p>Though currently mainly for internal use, an abstraction on top of <code>JSON</code> has been created, inspired by <code>JSON</code> called <code>XContent</code>. There is support a <code>JSON</code> implementation for it, but also support for <code>XSON</code>, which is a binary <code>JSON</code> format for faster and smaller (message footprint) messages. The Java <span class=""caps"">API</span> already uses it automatically (not for indexed documents), and both the <span class=""caps"">REST</span> <span class=""caps"">API</span> and the indexed documents can be either in <code>JSON</code> or <code>XSON</code> format. <code>XSON</code> format will be documented in the near future to allow for non <span class=""caps"">JVM</span> based clients to use it.</p>
+<p>-shay.banon</p>",Shay Banon,45,0.7.0 Released 
+"<p>From the get go, elasticsearch has been designed and built for the cloud. From its internal architecture, to how it works in its distributed nature. In the upcoming 0.7 version, the cloud vision has been fully realized.</p>
+<p>The Cloud integration revolves around two major components in ElasticSearch: <strong>Discovery</strong> and <strong>Gateway</strong>.</p>
+<h2>Cloud Discovery</h2>
+<p>One of the main problems with running distributed systems on the cloud is discovery. Products that can do &#8220;zero conf&#8221; discovery use multicast for it (elasticsearch among them), and in most cloud providers (Amazon <span class=""caps"">AWS</span> or Rackspace) multicast is disabled. The typical way to work around it is to use unicast discovery, which requires setting up a specific list of IPs/Hosts (routers or gossip servers).</p>
+<p>Unicast discovery is problematic when used on the cloud. Machines can come and go, and their IP is not static. Cloud providers work around that by providing the ability to have a set of &#8220;elastic IPs&#8221;. But, at the end, the management of the cloud installation becomes a pain. At least two servers must be associated with an elastic IP and become a special exception case which needs to be managed. This goes completely against &#8220;zero conf&#8221; discovery and heavily complicates the cloud installation.</p>
+<p>ElasticSearch has a new discovery module called &#8220;Zen&#8221; which was built from the ground up to work well in cloud environments (and integrate well with other elasticsearch modules). The cloud extension to it provides &#8220;zero conf&#8221; discovery in cloud environments.</p>
+<p>In a nutshell, when running on the cloud, the list of machines that are already running on the cloud is available through cloud APIs. This information can be used to perform &#8220;zero conf&#8221; discovery. This follows the motto that the should be embraced by any system running on the cloud: <em>All Machines are Created Equal</em>.</p>
+<p>So, how do you enabled cloud discovery on the cloud? With a few lines of configuration:</p>
+<pre class=""prettyprint lang-js"">
+cloud:
+    account: &lt;Your Amazon AWS Account Here&gt;
+    key: &lt;Your Amazon AWS Secret Key Here&gt;
+    compute:
+        type: amazon
+discovery:
+    type: cloud
+</pre>
+<p>The above configuration enables auto discovery in Amazon <span class=""caps"">AWS</span>. Simply replace <code>amazon</code> with <code>rackspace</code> to work on the Rackspace cloud. There is a long list of compute cloud providers supported, including GoGrid, and Terremark.</p>
+<h2>Gateway</h2>
+<p>ElasticSearch has been designed to do reliable asynchronous long term persistency. This enables several features including the ability for fast local &#8220;runtime&#8221; storage (including in-memory) while having a long term storage that can be slower. The Gateway concept is described in the <a href=""/blog/2010/02/16/searchengine_time_machine.html"">Search Engine Time Machine</a> post.</p>
+<p>But first, a step back. When designing a system that would be deployed on the cloud, lets take a search engine for example ;), things come and go. One of those things that come and go are disks. So, local storage, in cloud environments, is considered transient. In Amazon <span class=""caps"">AWS</span> for example, <span class=""caps"">EBS</span> (Elastic Block Store) was introduced to provide a mountable disk that survives restarts. So, we could configure our search engine to store the index on <span class=""caps"">EBS</span>. But, <span class=""caps"">EBS</span> requires periodic snapshotting to S3 (amazon blob store) for &#8220;safe&#8221; persistency, since <span class=""caps"">EBS</span> can certainly suffer from failures as well. Of course, this means more money spent on your cloud deployment since now one pays for both <span class=""caps"">EBS</span> and S3.</p>
+<p>One way to work around this is to persist directly from the local store to S3 by writing some sort of synchronization script / code. But, if the machines fails we will loose all the data up to the point when the script last ran. The next step is to add replication (and sharding for performance) and so on. All of this is provided by elasticsearch out of the box.</p>
+<p>Here is how elasticsearch can be configured to store both its cluster metadata (to survive full cluster failure) and indices in the cloud:</p>
+<pre class=""prettyprint lang-js"">
+cloud:
+    account: &lt;Your Amazon AWS Account Here&gt;
+    key: &lt;Your Amazon AWS Secret Key Here&gt;
+    blobstore:
+        type: amazon
+gateway:
+    type: cloud
+    cloud:
+        container: mycontainerhere
+</pre>
+<p>The above simple configuration will store things in Amazon S3. Simply change <code>amazon</code> to <code>rackspace</code> to use Rackspace CloudFiles. There is a long list of blobstore providers supported, including Azureblob.</p>
+<h2>Final Words</h2>
+<p>As you can see, elasticsearch is now a first class citizen when running on the cloud. I believe that it has actually created a new level of intimate integration of products with the cloud. Both the <em>Discovery</em> and <em>Gateway</em> means that managing an elasticsearch deployment on the cloud is a breeze.</p>
+<p>As a side note, I would like to note that cross cloud support is done using <a href=""http://jclouds.googlecode.com"">jclouds</a>. Highly recommended.</p>
+<p>-shay.banon</p>",Shay Banon,46,Here Comes The Cloud 
+"<img src=""http://media.xircles.codehaus.org/_projects/groovy/_logos/medium.png"" height=""60px"" class=""left-img""></img>
+
+<p>Just pushed into master (upcoming 0.7 release) a <a href=""http://groovy.codehaus.org/"">Groovy</a> client wrapper on-top of the <a href=""/guide/reference/java-api/"">Java <span class=""caps"">API</span></a> elasticsearch provides.</p>
+<p>Using elasticsearch with dynamic languages makes a lot of sense, especially thanks to its <a href=""/blog/2010/02/12/yourdatayoursearch.html"">domain driven approach</a>, and thanks to the fact that Groovy runs on the <span class=""caps"">JVM</span>, it can make use of the native elasticsearch Java <span class=""caps"">API</span>. Here are some examples:</p>
+<p>Creating a node (that acts as a client) within the cluster is simple using the <code>GNodeBuilder</code>:</p>
+<pre class=""prettyprint"">
+def nodeBuilder = new org.elasticsearch.groovy.node.GNodeBuilder()
+nodeBuilder.settings {
+    node {
+        client = true
+    }
+}
+def gNode = nodeBuilder.node()
+def client = gNode.client
+</pre>
+<p>Note, right from the start, the domain driven settings applied. Settings in elasticsearch can be defined using <code>JSON</code>, and, by utilizing Grails <code>JsonBuilder</code>, they can be expressed as a Groovy <code>Closure</code>.</p>
+<p>Next, lets index some data:</p>
+<pre class=""prettyprint"">
+def future = client.index {
+    index ""twitter""
+    type ""tweet""
+    id ""1""
+    source {
+        user = ""kimchy""
+        message = ""elasticsearch is groovy""
+    }
+}
+
+// a listener can be added to the future
+future.successs = {IndexResponse response -&gt;
+    println ""Indexed $response.index/$response.type/$response.id""
+}
+
+// or, we can wait for the response
+println ""Indexed $future.response.index/$future.response.type/$future.response.id""
+</pre>
+<p>Here, we indexed a tweet into an index called <code>twitter</code>, the type is a <code>tweet</code> and under id <code>1</code>. Note that the indexed <code>JSON</code> is expressed using the same <code>JsonBuilder</code>.</p>
+<p>Also, all operations in elasticsearch are asynchronous allowing to either register a listener (on success/failure) or work with an <code>ActionFuture</code>. The <code>future</code> in the Groovy case is an enhanced Groovy future called <code>GActionFuture</code>. It allows to wait for the <code>response</code>, or register <code>Closure</code> that will be called on a successful index, failed index, or both.</p>
+<p>All APIs are used exactly the same as the above index one. Let me finish with an example of the Search <span class=""caps"">API</span>, which shows the power of the search query <span class=""caps"">DSL</span>:</p>
+<pre class=""prettyprint"">
+def search = client.search {
+    indices ""twitter""
+    types ""tweet""
+    source {
+        query {
+            term(user: ""kimchy"")
+        }
+    }
+}
+
+println ""Search returned $search.response.hits.totalHits total hits""
+println ""First hit tweet message is $search.response.hits[0].source.message""
+</pre>
+<p>As you can see, using elasticsearch from Groovy is groovy ;). Someone up for building a grails plugin utilizing this?</p>
+<p>-shay.banon</p>",Shay Banon,47,ElasticSearch Just Got Groovy 
+"<p>ElasticSearch version <code>0.6.0</code> has just been released. You can download it <a href=""/download"">here</a>. This release brings much improved stability, and several features:</p>
+<p>First, a big rename has occurred. All the <span class=""caps"">JSON</span> <span class=""caps"">API</span> now uses &#8220;underscore casing&#8221; instead of &#8220;CamelCase casing&#8221;. This makes elasticsearch more streamlined with other <span class=""caps"">JSON</span> based <span class=""caps"">REST</span> APIs out there.</p>
+<p>The <span class=""caps"">JSON</span> <span class=""caps"">API</span> is much more flexible now, supporting numbers provided as strings, and boolean values provided as either numbers or strings. This makes using elasticsearch from dynamic languages more easy.</p>
+<p><code>_all</code> field support has been added, automatically creating a field that includes all the different fields in the <span class=""caps"">JSON</span> document for simpler searching (no need to explicitly specify the field name to search on). One of the nice things about the <code>_all</code> field is that it takes boost level setting of different fields into account. More information on the <code>_all</code> field can be found <a href=""/guide/reference/mapping/all-field.html"">here</a>.</p>
+<p>Highlighting is now supported as part of the search request.</p>
+<p>Simpler Query <span class=""caps"">DSL</span> including support for <code>fuzzy_like_this</code> queries and <code>gt/lt/gte/lte</code> on <code>range</code> queries.</p>
+<p><a href=""/guide/reference/api/admin-indices-aliases.html"">Index Aliases</a> <span class=""caps"">API</span> allows to create aliases associated with a single index or more and executing other APIs using it instead of the actual index names.</p>
+<p>A new plugin system has been develop allowing to easily extend elasticsearch with the first plugin being the <code>attachments</code> plugin allowing to index &#8220;attachments&#8221; such as documents, images, mails, and so on.</p>
+<p>Internal changes to how communication is handled between nodes resulting in much smaller messages passing around over the low level transport layer and a lower latency/overhead for each <span class=""caps"">API</span>.</p>
+<p>Many bug fixes and performance enhancements slowly making elasticsearch as rock solid as it should be!</p>
+<p>Last but not least, elasticsearch is now on Maven repository, with a <a href=""http://oss.sonatype.org/content/repositories/releases/"">releases repo</a> and a <a href=""http://oss.sonatype.org/content/repositories/snapshots"">snapshots repo</a>.</p>
+<p>-shay.banon</p>",Shay Banon,48,0.6.0 Released 
+"<p>ElasticSearch version <code>0.5.0</code> has just been released. You can download it <a href=""/download"">here</a>. This release brings much improved stability, better handling of mapping definitions, and several features:</p>
+<p>Several new queries have been added, including <code>moreLikeThis</code> , <code>moreLikeThisField</code>, <code>fieldQuery</code>, <code>queryString</code> with multiple fields.</p>
+<p><a href=""/guide/reference/api/search/facets/terms-facet.html"">terms</a> <span class=""caps"">API</span> allowing to get terms (from one or more indices) of one or more fields and their respective document frequencies (how often they exists in documents). This can be very handy to implement things like tag clouds or simple auto suggest.</p>
+<p><a href=""/guide/reference/api/admin-cluster-health.html"">cluster_health</a> <span class=""caps"">API</span> for simple indication on the health of the cluster, as well as the ability to wait for the cluster to reach a health status.</p>
+<p><a href=""/guide/reference/api/more-like-this.html"">moreLikeThis</a> <span class=""caps"">API</span> to search for documents that are like a certain document.</p>
+<p><a href=""/guide/reference/java-api/"">Java <span class=""caps"">API</span></a> exposing all of elasticsearch operations/actions using simple, transport based, async <span class=""caps"">API</span> to use with any <span class=""caps"">JVM</span> based language.</p>
+<p>There are many more minor features and bug fixes, all listed <a href=""http://github.com/elasticsearch/elasticsearch/issues/closed"">here</a> under the <code>v0.5.0</code> tag.</p>
+<p>-shay.banon</p>",Shay Banon,49,0.5.0 Released 
+"<img src=""/blog/images/no_yes.jpeg"" height=""80px"" class=""left-img""></img>
+
+<p><a href=""http://en.wikipedia.org/wiki/NoSQL"">NoSQL</a> seems to be all the hype, helping people get away from databases into more (horizontally) scalable solutions while sacrificing certain database characteristics (and gaining others, such as being schema free). And NoSQL products seems to start showing up everywhere such as <a href=""http://incubator.apache.org/cassandra/"">Cassandra</a>, <a href=""http://hadoop.apache.org/hbase/"">HBase</a>, <a href=""http://riak.basho.com/"">riak</a>, <a href=""http://www.mongodb.org/"">mongodb</a>, <a href=""http://project-voldemort.com/"">Project Voldemort</a>, and <a href=""http://code.google.com/p/terrastore/"">Terrastore</a> to name a few.</p>
+<p>To this list, I would also add long time (data) grid providers such as <a href=""http://www.gigaspaces.com"">GigaSpaces</a>, <a href=""http://www.oracle.com/technology/products/coherence/index.html"">Oracle Coherence</a>, and <a href=""http://publib.boulder.ibm.com/infocenter/wxdinfo/v6r0/topic/com.ibm.websphere.xd.doc/info/prodovr/cobgojbectgrid.html""><span class=""caps"">IBM</span> ObjectGrid</a>. Products that are playing at a much higher playground than the previous ones (think NoSQL++).</p>
+<p class=""note"">As a side note, its great that the NoSQL solution is gaining steam. If in the past (3-4 years ago) I had to explain and educate why such concepts as collocation, master worker, map reduce, and in memory storage are very important when designing scalable systems, now they have become almost common knowledge.</p>
+<p>All products mentioned provide, in one form or another, the ability to query data. Some use <span class=""caps"">SQL</span> like queries, others use map reduce. At one point though, regardless of where or how you store your data, you would want to add search to it. What do I mean when I say search? I mean search in what you expect search engines to provide you with. Think of twitter solving their data storage problems, but not being able to search on all the tweets (preferably in real time).</p>
+<p>But now we find ourself in a problematic situation. We finally managed to solve the scaling requirements of our data storage, only to find that we need to add search to our system (hopefully, you are adding search from the get go, as its a must have feature in any application). And the search solution needs to scale. More over, since the dream scenario is that our search solution would allow us to search on <strong>all</strong> our data, it needs to scale as much as our NoSQL solution does.</p>
+<p>For this reason, a true, distributed, scalable search solution is required. And guess what, I think I know of one :). So how to we pull this off, the integration between elasticsearch and our chosen NoSQL solution?</p>
+<p>Well, we can start with the simplest solution. Anytime we update the NoSQL solution, we can go ahead and execute the same or a similar update to elasticsearch. Since elasticsearch has a <span class=""caps"">REST</span> <span class=""caps"">API</span>, it can basically integrate with any language that interacts with our chosen NoSQL. This is the simplest way to solve our problem.</p>
+<p>A more interesting solution would be to integrate search <strong>into NoSQL</strong>. Think of an indexing stored procedure running within our NoSQL cluster and every time something changes, the same change is applied to elasticsearch as well. Moreover, converting from either pure <span class=""caps"">JSON</span>, column based storage, or even Object based is just a matter of converting them into an indexable <span class=""caps"">JSON</span> that elasticsearch provides. And, thanks to the fact that elasticsearch data model is flexible (as explained in the <a href=""/blog/2010/02/12/yourdatayoursearch.html"">Your Data, Your Search</a> blog post), the conversion is extremely simple.</p>
+<p>As an example, with <a href=""http://www.gigaspaces.com"">GigaSpaces</a>, we can register an event container (against a customizable matching query/template) that will automatically apply any changes done in the data grid into elasticsearch, the code would generally look something like this (including a sneak peak at the upcoming elasticsearch Java <span class=""caps"">API</span>):</p>
+<pre class=""prettyprint lang-java"">
+void onEvent(Object event, EntryArrivedRemoteEvent event) {
+    String index = ""myIndex"";
+    String type = event.getClass().getSimpleName();
+    String id = extractId(event);
+    switch (remoteEvent.getNotifyActionType()) {
+        case NOTIFY_LEASE_EXPIRATION:
+        case NOTIFY_TAKE:
+            esClient.delete(deleteRequest(""myIndex"")
+                            .type(type)
+                            .id(id));
+            break;
+        case NOTIFY_UPDATE:
+        case NOTIFY_WRITE:
+            esClient.index(indexRequest(""myIndex"")
+                            .type(type)
+                            .id(id)
+                            .source(toJson(event)));
+            break;
+    }
+}    
+</pre>
+<p>When doing so, we can actually get all the features <a href=""http://www.gigaspaces.com"">GigaSpaces</a> provides as a high throughput, low latency, scalable data grid (among many other features), with the option to perform full text search on all/part of the data stored.</p>
+<p>Another example, which is already there to play with (proper documentation coming soon) is the integration done between <a href=""http://code.google.com/p/terrastore/"">Terrastore</a> and elasticsearch. Since terrastore handles data in <span class=""caps"">JSON</span> format, there is no conversion needed and applying changes in terrastore is just a matter of registering an <code>EventListener</code> (simplified version of <a href=""http://code.google.com/p/terrastore/source/browse/src/main/java/terrastore/search/ElasticSearchListener.java?repo=search"">this code</a>):</p>
+<pre class=""prettyprint lang-java"">
+void onValueChanged(final String bucket, final String key, final byte[] value) {
+    esClient.index(indexRequest(""myIndex"")
+                    .type(bucket)
+                    .id(key)
+                    .source(value));
+}
+
+void onValueRemoved(final String bucket, final String key) {
+    esClient.delete(deleteRequest(""myIndex"")
+                    .type(bucket)
+                    .id(key));
+}
+</pre>
+<p>At the end, your system of record can be a database, a NoSQL product, or something else entirely. With search becoming a requirement in any application built this days (real time search is all the buzz ;) ), a proper thought into how to solve this problem will help you in the long run. And remember, if your data needs scaling, you search solution <strong>has to be able to scale as well</strong>.</p>
+<p>-shay.banon</p>
+<p class=""note"">If someone is interested (I sure as hell am) at getting the same integration into other NoSQL solutions, such as <a href=""http://incubator.apache.org/cassandra/"">Cassandra</a>, <a href=""http://hadoop.apache.org/hbase/"">HBase</a>, <a href=""http://riak.basho.com/"">riak</a>, <a href=""http://www.mongodb.org/"">mongodb</a>, and <a href=""http://project-voldemort.com/"">Project Voldemort</a>, drop a line at <a href=""/community"">elasticsearch</a> and lets go for it.</p>",Shay Banon,50,"NoSQL, Yes Search "
+"<img src=""/blog/images/time_tunnel.jpg"" height=""160px"" class=""left-img""></img>
+
+<p>Building a highly available product requires some creative thinking. High availability is measured in two aspects when talking about distributed products. The first is the ability to survive partial cluster failure gracefully (and scale to new nodes when added), and the second is handling complete cluster failure or shutdown (and bringing it back up again).</p>
+<p>The following covers how a distributed system can handle these two problems, especially in cloud environments, and what ElasticSearch does in such cases.</p>
+<h2>Partial Cluster Failure</h2>
+<p>Partial cluster failure means that one or more nodes failed within the cluster. Support in a distributed system for partial cluster failure means (surprise surprise) not losing data when such events happen. It gets even more important when working in the cloud, since the control one has over the servers (for good or bad) is out of our hands. Moreover, with cloud providers innovating with cool features like Amazon&#8217;s <a href=""http://aws.amazon.com/ec2/spot-instances/"">spot instances</a> (the ability to bid for instances), we cannot control when our nodes operate. They basically come and go as they wish.</p>
+<p>This is a question of state, and where the state is stored. I will cover the case when the state is stored locally to the node, which means that if you lose your node, you lose the data stored with the node. It is important to understand that almost any system will work much faster with local state (local file system, &#8220;local&#8221; memory) than with a shared storage solution (like <span class=""caps"">NFS</span>). Also, when more than one node needs to access shared state (like <span class=""caps"">NFS</span>), usually locking needs to take place, which hinders the scalability of the system.</p>
+<p>The most common solution to partial cluster failure is to replicate data between nodes. The ability to control the number of replicas in the cluster allows one to provide a higher degree of availability (this also relates to total cluster failure, see below). The idea of replication is to have one node that perform the operation on itself, and then to replicate the data or operation to its replicas.</p>
+<p>In the case of ElasticSearch, an index is broken down into shards, and each shard can have zero or more replicas. Both are configurable when creating an index. Here is an example of creating an index with 3 shards, each with 2 replicas (note, this is configurable on a <strong>per index basis</strong>):</p>
+<pre class=""prettyprint"">
+$ curl -XPUT http://localhost:9200/twitter/ -d '
+index :
+    number_of_shards : 3
+    number_of_replicas : 2
+'
+</pre>
+<p>When an operation is presented to a node, it is routed automatically to the primary shard within its replication group, which performs the operation and then replicates it to all its backups. Replication to the backup is done in parallel using <strong>non-blocking IO</strong>, which basically means that more replicas mainly just means more traffic on the network.</p>
+<p class=""note"">Replicas accept read operations as well, meaning that the more replicas you have, the more highly available your index is, but also the more scalable it is in terms of search and get operations!</p>
+<p>Once we work under the assumption that node level state is volatile, we can store the index itself in a fast medium, perhaps  a local file system (even <span class=""caps"">SSD</span>),  <span class=""caps"">JVM</span> heap memory, or even non-<span class=""caps"">JVM</span> (or native) memory.</p>
+<p>The choice of where to store an index for ElasticSearch is configurable on the index level.  Here is an example that indicates that the &#8220;twitter&#8221; index be stored in main memory:</p>
+<pre class=""prettyprint"">
+$ curl -XPUT http://localhost:9200/twitter/ -d '
+index :
+    store:
+        type : memory
+'
+</pre>
+<p>But if node storage is considered transient, what do we do regarding long term persistency of the index? The answer is the next section.</p>
+<h2>Full Cluster Failure / Long Term Persistency</h2>
+<p>Handling full cluster failure or shutdown means that both the state of the cluster (i.e. which indices exist, what are the their settings, what are their mapping definitions, etc.) and the content of each index must be stored persistently elsewhere.</p>
+<p>A solution for this is similar to <a href=""http://www.apple.com/macosx/what-is-macosx/time-machine.html"">Time Machine</a>, we need to persist the state into a long term storage. This solution is similar to what data grids have called <a href=""http://www.infoq.com/articles/write-behind-caching"">Write Behind</a>.</p>
+<p>The idea is that short term high availability is maintained by replication, while long term persistency is done by <strong>asynchronously</strong> writing deltas of the state into long term (persistent) storage. The benefit is that <strong>real time operations are not affected</strong> by this process.</p>
+<p>So, what happens when we restart a cluster? When it first starts up, it queries the long term storage for the cluster state (indices created, settings, mappings, etc.) and established them locally (creating indices, creating mapping). Each time a shard is first instantiated within its shard replication group, it will also recover its state from the long term persistency.</p>
+<p>ElasticSearch provides this capability with a module called <a href=""/guide/reference/modules/gateway/"">Gateway</a>. For example, to have the state stored in a shared file system, each node needs to start with a configuration of:</p>
+<pre class=""prettyprint"">
+gateway :
+    type : fs
+    fs :
+        location : /shared/fs/
+</pre>
+<p>This can also be started right from the command line using (only on unix):</p>
+<pre class=""prettyprint"">
+$ bin/elasticsearch -f \
+        -Des.gateway.type=fs -Des.gateway.fs.location=/shared/fs/
+</pre>
+<p>The above means that the cluster state will be stored on a shared file system, and each index created will automatically store its state on a shared file system as well. But, since each index has its own <a href=""http://www.elasticsearch.com/docs/elasticsearch/index_modules/gateway/"">index gateway</a>, we can get clever and decide on a per index level if it should be stored using a gateway or not. For example, the following example disables long term storage of an index:</p>
+<pre class=""prettyprint"">
+$ curl -XPUT http://localhost:9200/my_special_volatile_index/ -d '
+index :
+    gateway:
+        type : none
+'
+</pre>
+<p>As you can see, this is really powerful. More over, this is the perfect solution for cloud environments. In the cloud, storing long term state is usually done using what the cloud provider provides. For example, with Amazon, its <a href=""http://aws.amazon.com/ebs/""><span class=""caps"">EBS</span></a> or <a href=""http://aws.amazon.com/s3/"">S3</a>. Right out of the (current version) box, you can use Amazon <span class=""caps"">EBS</span> for long term storage in ElasticSearch (since its a mounted shared file system). In the future, there will also be a gateway module to store the state directly on Amazon S3 and others.</p>
+<h2>Final Words</h2>
+<p>This is only the tip of the iceberg of how ElasticSearch replication, recovery and gateway works, and the future will just increase the iceberg (right back at you, global warming!). For example, what I am playing with now is with the idea of treating indices state as a version control, being able to tag them, and recover back specific tags into new indices or current ones. I hope that at least in terms of handling cluster failures (both partial and total), ElasticSearch makes more sense now.</p>
+<p>-shay.banon</p>",Shay Banon,51,Search Engine Time Machine 
+"<img src=""/blog/images/magnifying-glass-from-top-secret.gif"" height=""100px"" class=""left-img""></img>
+
+<p>One of the main aspects when working with business data is to try and have all different components in an ever evolving system to understand the same data structure/format (or as close as possible). This was the main drive for me when developing the data model ElasticSearch supports and the different search and interaction with the data model once indexed.</p>
+<p>For example, lets assume we want build our own Amazon store, and want to provide search for it. The first thing we have are of course books:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""book"" : {
+        ""isbn"" : ""0812504321""
+        ""name"" : ""Call of the Wild"",
+        ""author"" : {
+            ""first_name"" : ""Jack"",
+            ""last_name"" : ""London""
+        },
+        ""pages"" : 128,
+        ""tag"" : [""fiction"", ""children""]
+    }
+}
+</pre>
+<p>The above is a very simple representation of a book in <span class=""caps"">JSON</span>, but already you can see that the book itself has an <code>author</code>, which is a complex object that has fields, and <code>tag</code>, which is an array of tag names. What you hope is that each component in your Amazon system would be able to interact with the same representation of a book, and ElasticSearch was built just for that. It slurps up any valid <span class=""caps"">JSON</span>, and more over, it <strong>understand</strong> the elements within the <span class=""caps"">JSON</span>.</p>
+<p>In our case, we can first throw this book into ElasticSearch to index it by simple <span class=""caps"">HTTP</span> <span class=""caps"">PUT</span> it into <code>localhost:9200/amazon/book/0812504321</code>. We index it into an index called <code>amazon</code>, and a type called <code>book</code>. Once we did that, we can simple search for it, for example using <span class=""caps"">GET</span> on <code>localhost:9200/amazon/book/_search?q=tag:fiction</code>.</p>
+<p>But, as mentioned before, ElasticSearch <strong>understands</strong> the structure of the <span class=""caps"">JSON</span> book, which means we can execute the following search to find all the books that were authored by someone with first name of Jack: <code>localhost:9200/amazon/book/_search?q=author.first_name:Jack</code>.</p>
+<p>Now, after our Amazon store has great search support for books and we are successful, we decide to start selling music as well. For example:</p>
+<pre class=""prettyprint lang-js"">
+{
+    ""cd"" : {
+        ""asin"" : ""B00192IV0O""
+        ""name"" : ""THE E.N.D. (Energy Never Dies)"",
+        ""artist"" : ""Black Eyed Peas"",
+        ""label"" : ""Interscope"",
+        ""release_date"": ""2009-06-09"",
+        ""tag"" : [""hip-hop"", ""pop-rap""]
+    }
+}
+</pre>
+<p>And, we want to index it as well. Here, comes <code>types</code> in ElasticSearch into play. We can simply index the mentioned <span class=""caps"">JSON</span> into another type (we already have <code>book</code>) called <code>cd</code>, and <span class=""caps"">PUT</span> this <span class=""caps"">JSON</span> into <code>localhost:9200/amazon/cd/B00192IV0O</code>. Now, we can easily search for all the cds by the <code>Interscope</code> label: <code>localhost:9200/amazon/cd/_search?q=label:Interscope</code>.</p>
+<p>The search capabilities do not end there though, lets say we want to find <strong>everything within the Amazon index</strong> that has <code>energy</code> in its name. Thats a simple search request that is not restricted to the type: <code>localhost:9200/amazon/_search?q=name:energy</code>. Now we are starting to get into really nice search capabilities, both the ability to control types within an index, and be able to <strong>search across them</strong>. Of course, if we want to search just across the <code>cd</code> and <code>book</code> types (assuming we have more types later one), we can simple execute: <code>localhost:9200/amazon/book,cd/_search?q=name:energy</code>.</p>
+<p>Sometimes though, we want to narrow down a certain field in the search query to be executed against a specific type. The query itself it executed against the whole index, while just an element in it (for example, in a boolean query) is executed within the specified type. This can certainly be done, and here is an example: <code>localhost:9200/amazon/_search?cd.name:energy</code>. In this case we still execute the search against the <code>amazon</code> index, but our field is <code>cd.name</code>, which ElasticSearch automatically identifies as a typed field, and execute the part of the query that relates to the typed field just &#8220;within&#8221; the <code>cd</code> type.</p>
+<p>This has been a very short example of ElasticSearch support for any <span class=""caps"">JSON</span> structure, with different <span class=""caps"">JSON</span> types supported through multi-types in an index. A final word, and when things gets really interesting (and really scalable), is the fact that ElasticSearch support multi indices as well. In our example, the <code>book</code> and <code>cd</code> can be two completely different indices (with different settings), and ElasticSearch allows to search across them in a similar manner that you search across types.</p>
+<p>-shay.banon</p>",Shay Banon,52,"Your Data, Your Search "
+"<img src=""/blog/images/the_hudsucker_proxy.jpeg"" height=""120px"" class=""left-img""></img>
+
+<p>ElasticSearch is an open source, distributed, RESTful, search engine which is built on top of <a href=""http://lucene.apache.org"">Lucene</a> internally and enjoys all the features it provides.</p>
+<p>All the features it has are listed in the <a href="""">home page</a>, so no need to list them here again (with the extra splash, if I might add). ElasticSearch itself was born out of my frustration with the fact that there isn&#8217;t really a good, open source, solution for distributed search engine out there, which also combines what I expect of search engines after building <a href=""http://www.compass-project.org"">Compass</a> (and on that, I will blog later&#8230;).</p>
+<p>I have been working on this for the past several months, pouring my search and distributed knowledge into this (and portions of my heart and time ;) ), Enjoy!.</p>",Shay Banon,53,"You Know, for Search "
+

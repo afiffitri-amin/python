@@ -1,0 +1,968 @@
+[
+    {
+        "id": 1,
+        "title": "0.19.2 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.19.2 is out. You can download it here. It is a bug fix release fixing several bugs including a bug not being able to update index level settings on a live index using the index update settings API.",
+        "comments": [
+            {
+                "poster": "Bryan Green",
+                "message": "Is there a plan for \"version 1.0\"?\u00a0\r\nOr will we just see 0.126.2 taking over The Internet?",
+                "blog_id": 1,
+                "id": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "0.19.1 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.19.1 is out. You can download it here. It is a bug fix release fixing several bugs including a major bug where a thread can get into CPU spin when its relocated and a search/stats operation is executed against it.",
+        "comments": [
+            {
+                "poster": "Kristian",
+                "message": "Great! And I see the new ICU plugin has been released too. Kudos! ",
+                "blog_id": 2,
+                "id": 2
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "0.19.0 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.19.0 is out. You can download it here. It is the final 0.19.0 release (after 3 release candidates). 0.19 major features have been outlined in the previous blog posts for each release candidate release, but, it also marks an important bug fix and stability release over 0.18, upgrade is highly encouraged to all elasticsearch users.",
+        "comments": [
+            {
+                "poster": "ianmayo",
+                "message": "Here's a URL to view the issues resolved between 0.19.0 RC3 and 0.19.0 Release:\r\nhttps://github.com/elasticsearch/elasticsearch/issues?labels=v0.19.0&sort=created&direction=desc&state=closed&page=1",
+                "blog_id": 3,
+                "id": 3
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "0.19.0.RC3 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.19.0.RC3 is out. You can download it here. Its another bug fix released and (hopefully) the final release of 0.19.0 release candidates.",
+        "comments": [
+            {
+                "poster": "Benny Sadeh",
+                "message": "like multiple keyword search (each one with a different boost factor)",
+                "blog_id": 4,
+                "id": 4
+            },
+            {
+                "poster": "Bryan Green",
+                "message": "Thanks a ton Shay! This release rocks as usual. I can't wait to work with msearch...",
+                "blog_id": 4,
+                "id": 5
+            },
+            {
+                "poster": "Bryan Green",
+                "message": "I always pull several different sets of data when a request comes in. This allows me to pull unrelated data without connection related overhead.",
+                "blog_id": 4,
+                "id": 6
+            },
+            {
+                "poster": "haarts",
+                "message": "What would be a good use case for msearch? I can't come up with any.",
+                "blog_id": 4,
+                "id": 7
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "title": "0.19.0.RC2 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.19.0.RC2 is out. You can download it here. Its a bug fix release mainly fixing a major bug in how buffers are read and reused over the network (the optimization done in 0.19.0.RC1 was not complete).",
+        "comments": [
+            {
+                "poster": "Eric",
+                "message": "Should you add new features to a RC version, risking the introduction of more bugs while the RC's are meant to get all/most bugs solved?",
+                "blog_id": 5,
+                "id": 8
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "title": "0.19.0.RC1 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.19.0.RC1 is out. You can download it here. It is a major release candidate release of elasticsearch.",
+        "comments": []
+    },
+    {
+        "id": 7,
+        "title": "0.18.7 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.18.7 is out. You can download it here. It includes bug fixes including major bug fix in state storage with shared gateways (s3 for example), and support for nested documents in delete by query.",
+        "comments": [
+            {
+                "poster": "Seon",
+                "message": "Hooo-rah, Shay and team.",
+                "blog_id": 7,
+                "id": 9
+            },
+            {
+                "poster": "Damian Tylczy\u0144ski",
+                "message": "Thanks!",
+                "blog_id": 7,
+                "id": 10
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "title": "0.18.6 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.18.6 is out. You can download it here. It includes minor features and important bug fixes. Changes can be found here.",
+        "comments": [
+            {
+                "poster": "Maximillian Borgia",
+                "message": "any maven repo for this?",
+                "blog_id": 8,
+                "id": 11
+            },
+            {
+                "poster": "Ctymtce",
+                "message": "How preload index in this please? thank'u",
+                "blog_id": 8,
+                "id": 12
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "title": "0.18.5 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.18.5 is out. You can download it here. It includes an upgraded Lucene version (3.5), featuring bug fixes and memory improvements, as well as more bug fixes in elasticsearch itself. Changes can be found here.",
+        "comments": [
+            {
+                "poster": "Yangfuchao2010",
+                "message": "good",
+                "blog_id": 9,
+                "id": 13
+            },
+            {
+                "poster": "Marius",
+                "message": "Very impressive. I've tried to bend Solr to fit into a cloud-based, distributed setup without master/slaves, but gave up. Setting up elasticsearch was a snap, and the Java API is nice and simple. ",
+                "blog_id": 9,
+                "id": 14
+            },
+            {
+                "poster": "Shaun",
+                "message": "this is an awesome bit of kit - thanks - ive never prototyped data mashing solutions so fast! and ES is making this possible",
+                "blog_id": 9,
+                "id": 15
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "title": "0.18.3 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.18.3 has just been released. You can download it here. Its an important bug fix release, including a fix for a major bug and upgrade is highly recommended. An 0.17.10 version with the bug fixed has also been released.",
+        "comments": [
+            {
+                "poster": "Bryan Green",
+                "message": "Thank you Shay. ",
+                "blog_id": 10,
+                "id": 16
+            },
+            {
+                "poster": "Alper Akgun",
+                "message": "I have moved 3 Ruby projects to elasticsearch,\u00a0 and I am impressed by elasticsearch simplicity.\u00a0 Thanks for keeping on. ",
+                "blog_id": 10,
+                "id": 17
+            },
+            {
+                "poster": "Mike Kelp",
+                "message": "Thank you for all your work. Elastic search is very powerful and your take on the search problem is very cool.",
+                "blog_id": 10,
+                "id": 18
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "title": "0.18.0 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.18.0 has just been released. You can download it here. This is a major release, and includes the following major features:",
+        "comments": [
+            {
+                "poster": "Bryan Green",
+                "message": "I'm always thrilled when a new version comes out. The features impress me and Elasticsearch makes working with objects a breeze. Who you gonna call? JSON.",
+                "blog_id": 11,
+                "id": 19
+            },
+            {
+                "poster": "Frederic",
+                "message": "\u00a0Awesome new features! Thanks and just keep the great work.",
+                "blog_id": 11,
+                "id": 20
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "title": "0.17.8 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.17.8 has just been released. You can download it here. The release includes major bug fixes listed here.",
+        "comments": [
+            {
+                "poster": "Don Smith",
+                "message": "Does this work in Azure? ",
+                "blog_id": 12,
+                "id": 21
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "title": "0.17.7 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.17.7 has just been released. You can download it here.",
+        "comments": [
+            {
+                "poster": "avasilenko",
+                "message": "Excellent! It would be nice to include changelog in post",
+                "blog_id": 13,
+                "id": 22
+            },
+            {
+                "poster": "ES user",
+                "message": "Cool software! Thank you!",
+                "blog_id": 13,
+                "id": 23
+            },
+            {
+                "poster": "kimchy",
+                "message": "There is a link to all the issues fixed in the download page. usually we copy them over later also to the actual download page.",
+                "blog_id": 13,
+                "id": 24
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "title": "0.17.6 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.17.6 has just been released. You can download it here. This is is a quick release to fix a bug in automatic date detection when provided as yyyy/MM/dd or yyyy/MM/dd HH:mm:ss.",
+        "comments": []
+    },
+    {
+        "id": 15,
+        "title": "0.17.5 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.17.5 has just been released. You can download it here. This is a bug fix release and minor feature enhancements. Upgrade is highly recommended.",
+        "comments": []
+    },
+    {
+        "id": 16,
+        "title": "0.17.4 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.17.4 has just been released. You can download it here.",
+        "comments": []
+    },
+    {
+        "id": 17,
+        "title": "0.17.3 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.17.3 has just been released. You can download it here. This is another bug fix release with minor enhancements (listed here). This upgrade is highly recommended to all 0.17.x users.",
+        "comments": [
+            {
+                "poster": "Eko Kurniawan Khannedy",
+                "message": "nice",
+                "blog_id": 17,
+                "id": 25
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "title": "Mailing List Migration ",
+        "author": "Shay Banon",
+        "content": "I created the mailing list on a google apps account (paying one\u2026) with the hopes of not running into spam problems down the road. The problem with that is the fact that I did not know about the host of problems I will have with google account one\u2026 . The latest one is a major problem, where google apps restrict the size of members to 1000 members, and we just hit that.",
+        "comments": []
+    },
+    {
+        "id": 20,
+        "title": "0.17.1 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.17.1 has just been released. You can download it here. This is a quick bug fix release fixing major bugs (listed here).",
+        "comments": []
+    },
+    {
+        "id": 21,
+        "title": "0.17.0 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.17.0 has just been released. You can download it here. This is a major release, and includes the following major features:",
+        "comments": [
+            {
+                "poster": "Pipa",
+                "message": "thanks",
+                "blog_id": 21,
+                "id": 26
+            },
+            {
+                "poster": "Ben10",
+                "message": "any news on field collapsing?",
+                "blog_id": 21,
+                "id": 27
+            },
+            {
+                "poster": "Enrique Medina",
+                "message": "Congrats for a new release!",
+                "blog_id": 21,
+                "id": 28
+            },
+            {
+                "poster": "Horst",
+                "message": "yes, this would be a really cool\u00a0 feature",
+                "blog_id": 21,
+                "id": 29
+            },
+            {
+                "poster": "Andrej",
+                "message": "Will there be a Multi Get where you can specify the fields to return?",
+                "blog_id": 21,
+                "id": 30
+            },
+            {
+                "poster": "Tarun Jangra",
+                "message": "\u00a0Good to see next release. Congrats.",
+                "blog_id": 21,
+                "id": 31
+            },
+            {
+                "poster": "parental filter",
+                "message": "\r\n\r\nWill this automatically filter every\u00a0 website that we\u2019re going to open in our\r\nbrowser, it looks good to me. It will be a big help in filtering porn website\r\nto avoid my kid from opening that website, I guess I should review this first.\r\n\r\n\r\n",
+                "blog_id": 21,
+                "id": 32
+            },
+            {
+                "poster": "Sebong Oh",
+                "message": "I have been waiting for this release because of lucene upgrade. ",
+                "blog_id": 21,
+                "id": 33
+            },
+            {
+                "poster": "kimchy",
+                "message": "No, though you don't want to ask for \"too many\" as you need enough memory to represent it.\r\n\r\np.s. best place for questions is on the mailing list",
+                "blog_id": 21,
+                "id": 34
+            },
+            {
+                "poster": "mrg",
+                "message": "is there an upper limit\u00a0 on multi get? ",
+                "blog_id": 21,
+                "id": 35
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "title": "0.16.2 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.16.2 has just been released. You can download it here. The bulk of the work on this release (backported from master) revolves around improved memory usage, especially with the filter cache (there is a new default filter cache, which takes the size in bytes as a limit on works on the node level).",
+        "comments": [
+            {
+                "poster": "\u5bcc\u8d85 \u6768",
+                "message": "\u563f\u563f",
+                "blog_id": 22,
+                "id": 36
+            },
+            {
+                "poster": "CSP",
+                "message": "Does anyone know of a backup and recvovery strategy for ES? Thanks,",
+                "blog_id": 22,
+                "id": 37
+            },
+            {
+                "poster": "Chris Myers",
+                "message": "Does anyone know when the grails plugin will catch up to this version?",
+                "blog_id": 22,
+                "id": 38
+            },
+            {
+                "poster": "Joe Rawlings",
+                "message": "very nice!",
+                "blog_id": 22,
+                "id": 39
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "title": "Data Visualization with ElasticSearch and Protovis ",
+        "author": "Karel Minarik",
+        "content": "The primary purpose of a search engine is, quite unsurprisingly: searching. You pass it a query, and it returns bunch of matching documents, in the order of relevance. We can get creative with query construction, experimenting with different analyzers for our documents, and the search engine tries hard to provide best results.",
+        "comments": [
+            {
+                "poster": "Jacob Shea",
+                "message": "\u00a0Becoming a bigger fan with every\u00a0ElasticSearch article I read....nice job.",
+                "blog_id": 23,
+                "id": 40
+            },
+            {
+                "poster": "Enrique Medina Montenegro",
+                "message": "\u00a0I'm already thinking about tens of different ways to use this stuff in my website.\r\n\r\nThanks for lighting this up.",
+                "blog_id": 23,
+                "id": 41
+            },
+            {
+                "poster": "Fred Almeida",
+                "message": "you should be using d3.js instead of Protovis (it is no longer being actively maintained). \u00a0but otherwise pretty cool",
+                "blog_id": 23,
+                "id": 42
+            },
+            {
+                "poster": "Martijn Laarman",
+                "message": "Using facets for displaying statistical data was one of those aha moments for me, I had no clue protovis drew graphics that sharp and nice though,\u00a0beautiful!\r\n\r\nAnother great alternative use for facets is for decision tree/workflow interfaces.\u00a0\r\n\r\nExcellent blog post.\r\n\r\n\r\n",
+                "blog_id": 23,
+                "id": 43
+            },
+            {
+                "poster": "Radu Gheorghe",
+                "message": "Very nice and user-friendly documentation, especially for a \"young\" project. +10 kilos of respect for you guys!",
+                "blog_id": 23,
+                "id": 44
+            },
+            {
+                "poster": "mofle",
+                "message": "Interesting post, good job ;)\r\n\r\nI'm really starting to see all the possibilities of ES.\r\n\r\nWould love too see more posts like this.\r\n\r\nWould also like posts on the analyzers and usability improvements, like \"did you mean\" correction, search suggestions. Maybe do a post series where you dvelve into some the different parts of ES and show the many possibilities.",
+                "blog_id": 23,
+                "id": 45
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "title": "0.16.1 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.16.1 has just been released. You can download it here. This is a minor release but it includes some really cool features and enhancements:",
+        "comments": []
+    },
+    {
+        "id": 25,
+        "title": "0.16.0 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.16.0 has just been released. You can download it here. This release is quite a big and important one, adding many new features, and fixes several major/critical bugs.",
+        "comments": [
+            {
+                "poster": "Lukas Kahwe Smith",
+                "message": "Congrats on your baby and no I don't mean ElasticSearch in this case, though congrats are in order for that one too :)",
+                "blog_id": 25,
+                "id": 46
+            },
+            {
+                "poster": "Enrique Medina Montenegro",
+                "message": "Congrats Shay",
+                "blog_id": 25,
+                "id": 47
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "title": "New Search Types ",
+        "author": "Shay Banon",
+        "content": "elasticsearch has had the ability to control the search type since its inception. It includes the ability to control how to execute the \u201cquery\u201d and \u201cfetch\u201d phases of a distributed search execution, as well as the ability to compute distributed frequencies across shards (the \u201cdfs\u201d phase).",
+        "comments": [
+            {
+                "poster": "Pacquiao vs Marquez 3",
+                "message": "nice blog & very informative, i'm bookmarking this blog & visiting again for updates.",
+                "blog_id": 26,
+                "id": 48
+            },
+            {
+                "poster": "Mary Vega",
+                "message": "I am a newbie and trying to code a website for online dictionary. I already have the database in excel and want to make the website using mysql and phpmyadmin. I still have problems with mysql database queries, do you have any suggestions? ",
+                "blog_id": 26,
+                "id": 49
+            }
+        ]
+    },
+    {
+        "id": 27,
+        "title": "Update Settings ",
+        "author": "Shay Banon",
+        "content": "When using elasticsearch, many times the initial usage of an index in the cluster is bulk indexing data into it, and then moving into a more \u201cstreamlined\u201d operations that are applied in realtime against it. When doing something like bulk indexing, changing the default settings of the index can improve the speed at which documents are indexed, but, those settings then do not really apply for the case where we want to do real time indexing of data.",
+        "comments": []
+    },
+    {
+        "id": 28,
+        "title": "0.15.0 Released ",
+        "author": "Shay Banon",
+        "content": "elasticsearch version 0.15.0 has just been released. You can download it here. This is another major release that includes several major features and of course, the typical set of bug fixes and enhancements. Some of the major features include:",
+        "comments": [
+            {
+                "poster": "Medcl",
+                "message": "Great~~",
+                "blog_id": 28,
+                "id": 50
+            },
+            {
+                "poster": "Enrique Medina",
+                "message": "Great job, Shay. Looking forward to using that new Date Histogram in my projects.",
+                "blog_id": 28,
+                "id": 51
+            }
+        ]
+    },
+    {
+        "id": 29,
+        "title": "Versioning ",
+        "author": "Shay Banon",
+        "content": "Upcoming elasticsearch 0.15 has some very cool features baked into it, one of those is versioning. Each document indexed in elasticsearch is now versioned and this allow for some cool operations done on it. But first, a simple example, starting with an index request:",
+        "comments": [
+            {
+                "poster": "Will Ezell",
+                "message": "How does this work across puts to multiple nodes? \u00a0I put a version=2 on node 1 and someone else puts a version=2 on node 2 at the same time? \u00a0How is that contention handled?",
+                "blog_id": 29,
+                "id": 52
+            },
+            {
+                "poster": "David MARTIN",
+                "message": "RT @elasticsearch: Versioning in the upcoming 0.15 build http://bit.ly/fCKYSQ",
+                "blog_id": 29,
+                "id": 53
+            }
+        ]
+    },
+    {
+        "id": 30,
+        "title": "Percolator ",
+        "author": "Shay Banon",
+        "content": "Percolator is another feature that will be part of upcoming elasticsearch 0.15. The percolator allows you to register queries against an index, and then send percolate requests which include a doc, and getting back the queries that match on that doc out of the set of registered queries.",
+        "comments": [
+            {
+                "poster": "J Chris Anderson",
+                "message": "Can I use this to receive real-time results from a river,? like eg if I want to get a feed of updated twitter search results when using the twitter river. Or do I need to pass the document in with each request?",
+                "blog_id": 30,
+                "id": 54
+            },
+            {
+                "poster": "Hookercookerman",
+                "message": "is it possible to geo filter on\u00a0percolate?",
+                "blog_id": 30,
+                "id": 55
+            },
+            {
+                "poster": "Pau",
+                "message": "I can't get it working!\r\n\r\nFirst I do:\r\ncurl -XPUT localhost:9200/_percolator/users/4dfba36ee6f59c1187000001 -d '{\"query\":{\"field\":{\"gender\":\"male\"}}}'\r\nAnd then I try to:curl -XGET localhost:9200/users/candidates/_precolate -d '{\"doc\":{\"gender\":\"male\"}}'\r\n\r\nBut I get:\r\n{\"_index\":\"zpeaker\",\"_type\":\"candidates\",\"_id\":\"_precolate\"}\r\n\r\nInstead of:\r\n{\"ok\":true,\"matches\":[\"4dfba36ee6f59c1187000001\"]}",
+                "blog_id": 30,
+                "id": 56
+            },
+            {
+                "poster": "Avi Rappoport",
+                "message": "That's an interesting way of approaching filtering, and I'm definitely curious about what people do with it.  \r\n\r\nHave you read the classic filtering article?  1992, Belkin and Croft, \"Information filtering and retrieval: Two sides of the same coin?\"  you can get it via http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.104.7500",
+                "blog_id": 30,
+                "id": 57
+            },
+            {
+                "poster": "Achaayan",
+                "message": "Promoted Rersults?",
+                "blog_id": 30,
+                "id": 58
+            },
+            {
+                "poster": "Tim Hawkins",
+                "message": "This looks very cool, can this be used for \"term extraction\", ie load a percolator index up with a large dictionary of topic specific \"terms\" and push a document at it and have it tell you all the terms that where matched? \r\n\r\nI am using several term extraction AOI's which generally only work in english, but this should if I understand it properly allow me to develop my own term dictionaries for multiple languages. ",
+                "blog_id": 30,
+                "id": 59
+            },
+            {
+                "poster": "MikOS",
+                "message": "To the people who asked about uses for Percolator, I used it to determine if the incoming document needs indexing or abandoned. The other obvious application would be real-time alerting etc.",
+                "blog_id": 30,
+                "id": 60
+            }
+        ]
+    },
+    {
+        "id": 31,
+        "title": "New Site ",
+        "author": "Shay Banon",
+        "content": "We have revamped the site look and feel, hopefully to make it more appealing and more expressive in explaining what elasticsearch is all about. There is still much work left to be done, but we are on it!.",
+        "comments": [
+            {
+                "poster": "real estate",
+                "message": "\r\n\r\nThis program is essential for website owners to read and\r\nalso for those who are planning to build one. Before you are going to build\r\nyour page, make sure that you do have enough information on how to make it more\r\nuseful to your viewers.\r\n\r\n\r\n",
+                "blog_id": 31,
+                "id": 61
+            },
+            {
+                "poster": "EmmanuelOga",
+                "message": "The new layout is much welcomed! A little constructive criticism: gradients are not so great for reading. Perhaps you should consider adding a solid white rectangle for paragraphs? Another good idea is organize a design contest. Everybody loves those :-) And in a group of almost 500 members I'm sure a couple of people could get into such contest.\r\n\r\n ",
+                "blog_id": 31,
+                "id": 62
+            },
+            {
+                "poster": "Pipa",
+                "message": "Thanks",
+                "blog_id": 31,
+                "id": 63
+            },
+            {
+                "poster": "Colin Mollenhour",
+                "message": "I find it ironic that considering the subject matter of this project, that I as a developer seeking documentation, cannot.. you know, search! ;-)\r\nI was trying to find the docs on sorting and was able to find a link using Google but it was 404.. Can you put the old docs up somewhere until the new docs are complete?\r\n\r\nThanks for elasticsearch!",
+                "blog_id": 31,
+                "id": 64
+            },
+            {
+                "poster": "kimchy",
+                "message": "Right, at least for the guide, a nice white background is probably preferable. People are most welcomed to fork and submit designs :).",
+                "blog_id": 31,
+                "id": 65
+            }
+        ]
+    },
+    {
+        "id": 32,
+        "title": "0.14.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.14.0 has just been released. You can download it here. This release includes bug fixes as well as several features:",
+        "comments": []
+    },
+    {
+        "id": 33,
+        "title": "0.13.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.13.0 has just been released. You can download it here. This release includes important bug fixes (most important one is a possible corruption in the index data) and some new features, including:",
+        "comments": []
+    },
+    {
+        "id": 34,
+        "title": "0.12.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.12.0 has just been released. You can download it here. This release is a bit early due to a major bug found with full cluster recovery when using more than one index and the local gateway.",
+        "comments": []
+    },
+    {
+        "id": 35,
+        "title": "0.11.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.11.0 has just been released. You can download it here. This is a major release for elasticsearch, both in terms of feature set as well as stability.",
+        "comments": []
+    },
+    {
+        "id": 36,
+        "title": "Searchable CouchDB ",
+        "author": "Shay Banon",
+        "content": "The River allows to easily define data sources and have elasticsearch index them. The example provided in the post is twitter, but a river is an open API and can have different implementations. One of those coming out at 0.11 is CouchDB.",
+        "comments": [
+            {
+                "poster": "Marco Oliveira",
+                "message": "This looks great! I've been digging into CouchDB lately, and it's great to see that I'll be able to easily integrate the ES search capabilities into it.",
+                "blog_id": 36,
+                "id": 66
+            }
+        ]
+    },
+    {
+        "id": 37,
+        "title": "RabbitMQ River ",
+        "author": "Shay Banon",
+        "content": "Another River implementation, RabbitMQ River allowing to automatically index a rabbitmq queue. The format of the messages follows the new bulk api format:",
+        "comments": [
+            {
+                "poster": "Patrick Sauts",
+                "message": "Elasticsearch-river-rabbitmq uses '\\n' as a separator.meaning inside you Json you must remove every '\\n' (I replaced those with '<br>') you mustn't use formated Jsonafter each Json command including the last one you have to have a '\\n'\r\nThe command 'index' or 'create' must be within a single messageexemple:{ \"index\" : { \"_index\" : \"twitter\", \"_type\" : \"tweet\", \"_id\" : \"1\" }{ \"tweet\" : { \"text\" : \"this is a tweet\" } }\r\ncurl -L --show-error http://guest:guest@integ-mq:55672/api/exchanges/test/tweet/publish -XPOST -d '{\"properties\":{\"content_type\":\"application/json\",\"content_encoding\":\"UTF-8\"}, \"routing_key\":\"elasticsearch\",\"payload_encoding\":\"string\",\"payload\":\"{ \\\"index\\\" : { \\\"_index\\\" : \\\"twitter\\\", \\\"_type\\\" : \\\"tweet\\\", \\\"_id\\\" : \\\"1\\\" }{ \\\"tweet\\\" : { \\\"text\\\" : \\\"this is a tweet\\\" } }\"}'",
+                "blog_id": 37,
+                "id": 67
+            },
+            {
+                "poster": "Lorenzo Melegari",
+                "message": "on\u00a0https://github.com/elasticsearch/elasticsearch/issues/380\u00a0password tag is wrong, should be pass",
+                "blog_id": 37,
+                "id": 68
+            },
+            {
+                "poster": "Patrick Sauts",
+                "message": "I found the problems looking into the code<br>elasticsearch-river-rabbitmq uses '\\n' as a separator.<br>Meaning inside you Json you must remove every '\\n' (I replaced those with '\\<br\\>') you mustn't use formated Jsonafter each Json command including the last one you have to have a '\\n' <br>\r\nThe command 'index' or 'create' must be within a single message<br>exemple:<br>{ \"index\" : { \"_index\" : \"twitter\", \"_type\" : \"tweet\", \"_id\" : \"1\" }<br>{ \"tweet\" : { \"text\" : \"this is a tweet\" } }<br><br>\r\ncurl -L --show-error http://guest:guest@integ-mq:55672/api/exchanges/integ2/LOG_BROWSING/publish -XPOST -d '{\"properties\":{\"content_type\":\"application/json\",\"content_encoding\":\"UTF-8\"},\"routing_key\":\"#.#.#\",\"payload_encoding\":\"string\",\"payload\":\"{ \\\"index\\\" : { \\\"_index\\\" : \\\"twitter\\\", \\\"_type\\\" : \\\"tweet\\\", \\\"_id\\\" : \\\"1\\\" }<br>{ \\\"tweet\\\" : { \\\"text\\\" : \\\"this is a tweet\\\" } }<br>\"}'<br>",
+                "blog_id": 37,
+                "id": 69
+            }
+        ]
+    },
+    {
+        "id": 38,
+        "title": "The River ",
+        "author": "Shay Banon",
+        "content": "One of the problems elasticsearch aims at solving is \u201cthe river\u201d problem. The River is the stream of constant data and somehow finding a way to waddle through it and make something meaningful out of it.",
+        "comments": [
+            {
+                "poster": "Aaron Shaf",
+                "message": "Any support for a MongoDB river?",
+                "blog_id": 38,
+                "id": 70
+            },
+            {
+                "poster": "Gert Thiel",
+                "message": "To be honest I don't know for sure. But <a href=\"https://github.com/mikejs/photovoltaic\">photovoltaic</a> does exactly what I described and would like to expect from a MongoDB river.",
+                "blog_id": 38,
+                "id": 71
+            },
+            {
+                "poster": "kimchy",
+                "message": "Well, you can use the same python code to index into elasticsearch if it does what you want. Lets move this to the mailing list, really not the place for this.",
+                "blog_id": 38,
+                "id": 72
+            },
+            {
+                "poster": "kimchy",
+                "message": "The list of rivers is provided in the guide under the river section. Other river implementations are certainly possible, and would love contributions :)",
+                "blog_id": 38,
+                "id": 73
+            },
+            {
+                "poster": "Gert Thiel",
+                "message": "Actually there is a way to hook into MongoDB: the oplog. A MongoDB river could get a cursor on the oplog and and update the ES index on isert, update or delete ops.\r\n\r\nAfter searching for a while I found a code snippet albeit in Python:\r\n\r\nhttps://github.com/mikejs/photovoltaic/blob/master/pv.py#L65\r\n\r\nThe oplog is a plain MongoDB collection always available in replicated setups and easily accessible using the MongoDB Java client.\r\n\r\nBut I no Java guy at all and don't feel confident to write a River.",
+                "blog_id": 38,
+                "id": 74
+            },
+            {
+                "poster": "Roly",
+                "message": "Is there any documentation on how to get started implementing your own River plugin?\u00a0",
+                "blog_id": 38,
+                "id": 75
+            },
+            {
+                "poster": "Christoph",
+                "message": "What type of sources are supported for rivers? Can it be a mysql log file, a rails log file, a rss feed?",
+                "blog_id": 38,
+                "id": 76
+            },
+            {
+                "poster": "kimchy",
+                "message": "Right, I guess it requires more investigation, but I thought the oplog does not always contains the full doc when something changes, and, its a question of when it gets flushed, how does one sync with the initial data set and then starts traversing the oplog, and so on...",
+                "blog_id": 38,
+                "id": 77
+            },
+            {
+                "poster": "kimchy",
+                "message": "No, there isn't one. Its problematic since its not simple (or even possible) to hook into changes happening in mongodb. Most users simply replicates relevant changes they do on mongodb to elasticsearch.",
+                "blog_id": 38,
+                "id": 78
+            }
+        ]
+    },
+    {
+        "id": 39,
+        "title": "Zero Conf Persistency ",
+        "author": "Shay Banon",
+        "content": "With the new \u201clocal gateway\u201d, upcoming elasticsearch version 0.11 will provide zero conf long term persistency out of the box.",
+        "comments": []
+    },
+    {
+        "id": 40,
+        "title": "0.10.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.10.0 has just been released. You can download it here. This is a major release for elasticsearch, both in terms of feature set as well as stability.",
+        "comments": []
+    },
+    {
+        "id": 41,
+        "title": "Geo Location and Search ",
+        "author": "Shay Banon",
+        "content": "One of the coolest search technology combinations out there are the ability to combine geo and search. Queries such as give me all the restaurants that serves meat ([insert your query here]) within 20 miles from me, or create a distance heat map of them, is slowly becoming a must have for any content website. This is becoming even more relevant with new browsers supporting Geolocation API.",
+        "comments": [
+            {
+                "poster": "kimchy",
+                "message": "Yes, you can do that, post the Q on the mailing list for more details, but you can get the distance computed in the script itself, and use another field and some formula between the two to control the scoring.",
+                "blog_id": 41,
+                "id": 79
+            },
+            {
+                "poster": "Pau",
+                "message": "Same here",
+                "blog_id": 41,
+                "id": 80
+            },
+            {
+                "poster": "Home Security",
+                "message": "is it possible to percolate on geo in anyway?",
+                "blog_id": 41,
+                "id": 81
+            },
+            {
+                "poster": "Jeff Johnson",
+                "message": "\"The geo point type is no longer dynamic, you have to explicitly define it. \" -- Shay\r\n\r\nhttp://groups.google.com/a/elasticsearch.com/group/users/browse_thread/thread/f3171f71417adfb8/db7c749003545b73?lnk=gst&q=geo_point#db7c749003545b73",
+                "blog_id": 41,
+                "id": 82
+            },
+            {
+                "poster": "Smartphone Applications",
+                "message": "Awesome! \u00a0really appreciated work keep it up.",
+                "blog_id": 41,
+                "id": 83
+            },
+            {
+                "poster": "Mike Jarema",
+                "message": "Shay, awesome work with elastic search. \u00a0As a regular Solr user I'm happy to see a lot of the functionality I'd expect carried over to ES -- eg. geo-aware searching. \u00a0Plus it's a pleasant refresher to have such a welcoming design on the project site.\r\n\r\nI have a Q about custom scoring based on geo_distance ... is it possible to combine geo_distance with some attributes stored on the underlying document? \u00a0For example, how would I rank a 5 star restaurant 2km away higher than a 2 star restaurant 1km away?",
+                "blog_id": 41,
+                "id": 84
+            },
+            {
+                "poster": "Hookercookerman",
+                "message": "is it possible to percolate on geo in anyway? have tried filtering doesnt seem to work?",
+                "blog_id": 41,
+                "id": 85
+            }
+        ]
+    },
+    {
+        "id": 42,
+        "title": "0.9.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.9.0 has just been released. You can download it here. This is a major release for elasticsearch, both in terms of feature set as well as stability.",
+        "comments": []
+    },
+    {
+        "id": 43,
+        "title": "0.8.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.8.0 has just been released. You can download it here. This release includes several bug fixes and memory footprint improvements, and one major feature, Hadoop integration. This allows to use Hadoop HDFS as elasticsearch gateway storage, and enabling it is as simple as:",
+        "comments": []
+    },
+    {
+        "id": 44,
+        "title": "0.7.1 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.7.1 has just been released. You can download it here. This release fixed a major bug when indexing large documents resulting in storing additional null bytes (and returning them).",
+        "comments": []
+    },
+    {
+        "id": 45,
+        "title": "0.7.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.7.0 has just been released. You can download it here. This release brings much improved stability, and several features:",
+        "comments": [
+            {
+                "poster": "Website Hosting",
+                "message": "Really a well written post and you have described everything very clearly. I really enjoyed this post.",
+                "blog_id": 45,
+                "id": 86
+            }
+        ]
+    },
+    {
+        "id": 46,
+        "title": "Here Comes The Cloud ",
+        "author": "Shay Banon",
+        "content": "From the get go, elasticsearch has been designed and built for the cloud. From its internal architecture, to how it works in its distributed nature. In the upcoming 0.7 version, the cloud vision has been fully realized.",
+        "comments": []
+    },
+    {
+        "id": 47,
+        "title": "ElasticSearch Just Got Groovy ",
+        "author": "Shay Banon",
+        "content": "Just pushed into master (upcoming 0.7 release) a Groovy client wrapper on-top of the Java API elasticsearch provides.",
+        "comments": [
+            {
+                "poster": "Tet",
+                "message": "<script language=javascript>alert('Test')</script>",
+                "blog_id": 47,
+                "id": 87
+            }
+        ]
+    },
+    {
+        "id": 48,
+        "title": "0.6.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.6.0 has just been released. You can download it here. This release brings much improved stability, and several features:",
+        "comments": []
+    },
+    {
+        "id": 49,
+        "title": "0.5.0 Released ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch version 0.5.0 has just been released. You can download it here. This release brings much improved stability, better handling of mapping definitions, and several features:",
+        "comments": []
+    },
+    {
+        "id": 50,
+        "title": "NoSQL, Yes Search ",
+        "author": "Shay Banon",
+        "content": "NoSQL seems to be all the hype, helping people get away from databases into more (horizontally) scalable solutions while sacrificing certain database characteristics (and gaining others, such as being schema free). And NoSQL products seems to start showing up everywhere such as Cassandra, HBase, riak, mongodb, Project Voldemort, and Terrastore to name a few.",
+        "comments": [
+            {
+                "poster": "Anoopamz",
+                "message": "Can I use this with Cassandra , any lib is available ? ",
+                "blog_id": 50,
+                "id": 88
+            },
+            {
+                "poster": "Cosmin",
+                "message": "Hi,\r\n\r\nAny plans about integrating es with hbase soon? Just curious... ",
+                "blog_id": 50,
+                "id": 89
+            }
+        ]
+    },
+    {
+        "id": 51,
+        "title": "Search Engine Time Machine ",
+        "author": "Shay Banon",
+        "content": "Building a highly available product requires some creative thinking. High availability is measured in two aspects when talking about distributed products. The first is the ability to survive partial cluster failure gracefully (and scale to new nodes when added), and the second is handling complete cluster failure or shutdown (and bringing it back up again).",
+        "comments": [
+            {
+                "poster": "Ridvan Gyundogan",
+                "message": "good article. Exactly what I need for my performance tests.",
+                "blog_id": 51,
+                "id": 90
+            },
+            {
+                "poster": "Ian Lewis",
+                "message": "Is it possible to use a mySql database as a Gateway?\r\n\r\nIf so, how is this configured?",
+                "blog_id": 51,
+                "id": 91
+            }
+        ]
+    },
+    {
+        "id": 52,
+        "title": "Your Data, Your Search ",
+        "author": "Shay Banon",
+        "content": "One of the main aspects when working with business data is to try and have all different components in an ever evolving system to understand the same data structure/format (or as close as possible). This was the main drive for me when developing the data model ElasticSearch supports and the different search and interaction with the data model once indexed.",
+        "comments": [
+            {
+                "poster": "Changqingyan",
+                "message": "we can search across muli indices?really?this is a really a problem hovering on my mind,I get answers from your blog,please can you tell me more about the search across indices,because our web has the requirement of crossing indices search,thank you ",
+                "blog_id": 52,
+                "id": 92
+            },
+            {
+                "poster": "Joesmith",
+                "message": "Thanks for the example! Just wanted to let you know that there is a typo in the first JSON, there should be a comma after the ISBN field.",
+                "blog_id": 52,
+                "id": 93
+            }
+        ]
+    },
+    {
+        "id": 53,
+        "title": "You Know, for Search ",
+        "author": "Shay Banon",
+        "content": "ElasticSearch is an open source, distributed, RESTful, search engine which is built on top of Lucene internally and enjoys all the features it provides.",
+        "comments": [
+            {
+                "poster": "Nicolas Martignole",
+                "message": "The hyperlink to \"overview page\" is broken\r\n:-)",
+                "blog_id": 53,
+                "id": 94
+            },
+            {
+                "poster": "Jagdeep",
+                "message": "Hey Shay... I am exploring elasticsearch for past few months but read this blog first time... Thanks a lot for your contribution to opensource community...\r\nWe respect your this portion of heart :)",
+                "blog_id": 53,
+                "id": 95
+            }
+        ]
+    }
+]
